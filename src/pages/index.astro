@@ -1,10 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
-
-const creations = (await getCollection('creations', ({ data }) => data.disponible))
-  .sort((a, b) => a.data.ordre - b.data.ordre)
-  .slice(0, 3);
 
 const offres = [
   {
@@ -28,13 +23,6 @@ const offres = [
     lien: '/retouches',
     cta: 'Voir les tarifs',
   },
-  {
-    emoji: '🎀',
-    titre: 'Créations sur mesure',
-    texte: "Une pièce unique, pensée et cousue pour vous — vêtement, accessoire ou cadeau.",
-    lien: '/contact',
-    cta: 'Parler du projet',
-  },
 ];
 
 const arguments_ = [
@@ -42,14 +30,28 @@ const arguments_ = [
   { emoji: '👥', titre: 'Petits groupes', texte: "Maximum 6 personnes par atelier pour un vrai accompagnement personnalisé." },
   { emoji: '🧰', titre: 'Matériel fourni', texte: "Machines à coudre, tissus, mercerie : venez les mains dans les poches." },
   { emoji: '☕', titre: 'Ambiance conviviale', texte: "On coud, on apprend, on discute, on prend un thé. Chez soi, mais mieux." },
-  { emoji: '📍', titre: 'À Hasparren', texte: "Au cœur du Pays Basque, dans un espace lumineux facilement accessible." },
-  { emoji: '💛', titre: 'Passion transmise', texte: "L'envie de partager une pratique manuelle qui fait du bien et dure dans le temps." },
 ];
 
+// Avis Google authentiques
 const temoignages = [
-  { auteur: 'Prénom N.', note: 5, texte: "[Colle ici ton témoignage Google — 2 à 4 phrases suffisent]" },
-  { auteur: 'Prénom N.', note: 5, texte: "[Colle ici ton témoignage Google]" },
-  { auteur: 'Prénom N.', note: 5, texte: "[Colle ici ton témoignage Google]" },
+  {
+    auteur: 'Céline',
+    date: 'il y a 2 mois',
+    note: 5,
+    texte: "J'ai acheté une robe cut-out qui me plaisait énormément mais je l'avais trop large au niveau du buste, de la taille et aussi trop longue. Sandra avec ses petits […]",
+  },
+  {
+    auteur: 'Celine',
+    date: 'il y a 1 mois',
+    note: 5,
+    texte: "Merci à Sandra pour son intervention sur ma robe. Elle est patiente, elle est force de proposition et a des doigts de fée. Je la recommande les yeux fermés !",
+  },
+  {
+    auteur: 'Martine P.',
+    date: 'il y a 4 mois',
+    note: 5,
+    texte: "Depuis septembre dernier je suis inscrite à des ateliers de couture hebdomadaires dont l'animatrice est Sandra ; j'étais tout à fait novice, et Sandra m'a […]",
+  },
 ];
 
 const faq = [
@@ -82,7 +84,7 @@ const faq = [
 
 <BaseLayout
   title="Accueil"
-  description="Atelier Bidaia Alaia à Hasparren — Ateliers de couture, cours particuliers, retouches et créations sur mesure au Pays Basque. Couturière diplômée."
+  description="Atelier Bidaia Alaia à Hasparren — Ateliers de couture, cours particuliers et services de retouches au Pays Basque. Couturière diplômée."
 >
   <!-- HERO -->
   <section class="hero">
@@ -106,9 +108,9 @@ const faq = [
     <div class="container">
       <header class="section-head">
         <p class="eyebrow">Nos offres</p>
-        <h2>Ce que propose l'atelier</h2>
+        <h2>Ce que propose l'atelier Bidaia Alaia</h2>
       </header>
-      <div class="grid grid--4">
+      <div class="grid grid--3">
         {offres.map((o) => (
           <article class="offre">
             <div class="offre__icon" aria-hidden="true">{o.emoji}</div>
@@ -126,9 +128,9 @@ const faq = [
     <div class="container">
       <header class="section-head">
         <p class="eyebrow">Pourquoi l'atelier</p>
-        <h2>Ce qui fait la différence</h2>
+        <h2>Pourquoi l'atelier Bidaia Alaia</h2>
       </header>
-      <div class="grid grid--3">
+      <div class="grid grid--4">
         {arguments_.map((a) => (
           <div class="argument">
             <span class="argument__emoji" aria-hidden="true">{a.emoji}</span>
@@ -140,39 +142,18 @@ const faq = [
     </div>
   </section>
 
-  <!-- CRÉATIONS -->
+  <!-- L'ATELIER EN IMAGES -->
   <section class="section">
     <div class="container">
       <header class="section-head">
-        <p class="eyebrow">La boutique</p>
-        <h2>Créations de l'atelier</h2>
-        <p class="section-lede">Des pièces uniques, cousues main, disponibles en quantité limitée.</p>
+        <p class="eyebrow">L'espace</p>
+        <h2>L'atelier en images</h2>
+        <p class="section-lede">Un espace lumineux, équipé et pensé pour la créativité — à Hasparren.</p>
       </header>
-      {creations.length > 0 ? (
-        <div class="grid">
-          {creations.map((c) => (
-            <article class="card">
-              <div class="card__body">
-                <h3 class="card__title">{c.data.titre}</h3>
-                <p class="card__meta">{c.data.categorie}</p>
-                <p>{c.data.description}</p>
-                <p class="card__price">{c.data.prix} €</p>
-                {c.data.stripeLink ? (
-                  <a href={c.data.stripeLink} class="btn" target="_blank" rel="noopener" style="margin-top: var(--space-sm);">Acheter</a>
-                ) : (
-                  <a href="/contact" class="btn btn--ghost" style="margin-top: var(--space-sm);">Nous contacter</a>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-      ) : (
-        <p style="text-align: center; color: var(--color-text-muted);">
-          De nouvelles créations arrivent bientôt — <a href="/contact">restez en contact</a> !
-        </p>
-      )}
-      <div style="text-align: center; margin-top: var(--space-lg);">
-        <a href="/boutique" class="btn btn--ghost">Voir toute la boutique</a>
+      <div class="galerie">
+        <img src="/images/atelier-vue.jpg" alt="Vue générale de l'atelier avec table de coupe et machines" loading="lazy" />
+        <img src="/images/atelier-machines.jpg" alt="Machines à coudre professionnelles dans l'atelier" loading="lazy" />
+        <img src="/images/atelier-cabine.jpg" alt="Espace surjeteuses et cabine d'essayage" loading="lazy" />
       </div>
     </div>
   </section>
@@ -192,7 +173,10 @@ const faq = [
               {'★'.repeat(t.note)}<span class="temoignage__stars--empty">{'★'.repeat(5 - t.note)}</span>
             </div>
             <p class="temoignage__texte">« {t.texte} »</p>
-            <footer class="temoignage__auteur">— {t.auteur}</footer>
+            <footer class="temoignage__auteur">
+              <strong>{t.auteur}</strong>
+              <span class="temoignage__date">{t.date} · Google</span>
+            </footer>
           </blockquote>
         ))}
       </div>
@@ -235,168 +219,74 @@ const faq = [
 </BaseLayout>
 
 <style>
-  /* HERO */
-  .hero {
-    padding: var(--space-xl) 0 var(--space-2xl);
-    background: linear-gradient(180deg, var(--color-primary-soft) 0%, var(--color-bg) 100%);
-  }
+  .hero { padding: var(--space-xl) 0 var(--space-2xl); background: linear-gradient(180deg, var(--color-primary-soft) 0%, var(--color-bg) 100%); }
   .hero__logo { max-width: 200px; height: auto; margin: 0 auto var(--space-sm); }
-  .hero__eyebrow {
-    font-family: var(--font-display);
-    font-size: 0.9rem;
-    color: var(--color-accent-hover);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: var(--space-sm);
-  }
-  .hero__lede {
-    font-size: 1.2rem;
-    color: var(--color-text-muted);
-    margin: var(--space-md) auto var(--space-lg);
-    max-width: 620px;
-  }
+  .hero__eyebrow { font-family: var(--font-display); font-size: 0.9rem; color: var(--color-accent-hover); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-sm); }
+  .hero__lede { font-size: 1.2rem; color: var(--color-text-muted); margin: var(--space-md) auto var(--space-lg); max-width: 620px; }
   .hero__cta { display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap; }
 
-  /* HEAD DE SECTION */
   .section-head { text-align: center; margin-bottom: var(--space-lg); }
-  .eyebrow {
-    font-family: var(--font-display);
-    font-size: 0.85rem;
-    color: var(--color-secondary-dark);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-bottom: var(--space-xs);
-  }
-  .section-lede {
-    color: var(--color-text-muted);
-    max-width: 520px;
-    margin: var(--space-sm) auto 0;
-  }
+  .eyebrow { font-family: var(--font-display); font-size: 0.85rem; color: var(--color-secondary-dark); font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: var(--space-xs); }
+  .section-lede { color: var(--color-text-muted); max-width: 520px; margin: var(--space-sm) auto 0; }
   .section--soft { background: var(--color-primary-soft); }
 
-  /* GRILLES SUR MESURE */
   .grid--3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
   .grid--4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
   /* OFFRES */
-  .offre {
-    background: var(--color-surface);
-    padding: var(--space-lg) var(--space-md);
-    border-radius: var(--radius-lg);
-    text-align: center;
-    border: 1px solid var(--color-border);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
+  .offre { background: var(--color-surface); padding: var(--space-lg) var(--space-md); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-border); transition: transform 0.2s ease, box-shadow 0.2s ease; display: flex; flex-direction: column; gap: 0.5rem; }
   .offre:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-  .offre__icon {
-    font-size: 2.5rem;
-    margin-bottom: var(--space-xs);
-    line-height: 1;
-  }
-  .offre h3 {
-    font-size: 1.15rem;
-    margin-bottom: var(--space-xs);
-  }
-  .offre p {
-    color: var(--color-text-muted);
-    font-size: 0.95rem;
-    flex: 1;
-    margin-bottom: var(--space-sm);
-  }
-  .offre__link {
-    font-weight: 700;
-    color: var(--color-accent-hover);
-    font-family: var(--font-display);
-    font-size: 0.95rem;
-  }
+  .offre__icon { font-size: 2.5rem; margin-bottom: var(--space-xs); line-height: 1; }
+  .offre h3 { font-size: 1.15rem; margin-bottom: var(--space-xs); }
+  .offre p { color: var(--color-text-muted); font-size: 0.95rem; flex: 1; margin-bottom: var(--space-sm); }
+  .offre__link { font-weight: 700; color: var(--color-accent-hover); font-family: var(--font-display); font-size: 0.95rem; }
 
   /* ARGUMENTS */
-  .argument {
-    text-align: center;
-    padding: var(--space-md);
-  }
+  .argument { text-align: center; padding: var(--space-md); }
   .argument__emoji { font-size: 2.5rem; display: block; margin-bottom: var(--space-sm); }
   .argument h3 { font-size: 1.15rem; margin-bottom: var(--space-xs); }
   .argument p { color: var(--color-text-muted); font-size: 0.95rem; }
 
-  /* TÉMOIGNAGES */
-  .temoignage {
-    background: var(--color-surface);
-    padding: var(--space-md);
+  /* GALERIE */
+  .galerie {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+  }
+  .galerie img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
     border-radius: var(--radius-lg);
-    margin: 0;
-    border: 1px solid var(--color-border);
-    display: flex;
-    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .temoignage__stars {
-    color: var(--color-accent);
-    font-size: 1.1rem;
-    margin-bottom: var(--space-sm);
-    letter-spacing: 0.1em;
+  .galerie img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
   }
+
+  /* TÉMOIGNAGES */
+  .temoignage { background: var(--color-surface); padding: var(--space-md); border-radius: var(--radius-lg); margin: 0; border: 1px solid var(--color-border); display: flex; flex-direction: column; }
+  .temoignage__stars { color: var(--color-accent); font-size: 1.1rem; margin-bottom: var(--space-sm); letter-spacing: 0.1em; }
   .temoignage__stars--empty { color: var(--color-border); }
-  .temoignage__texte {
-    color: var(--color-text);
-    font-style: italic;
-    flex: 1;
-    margin-bottom: var(--space-sm);
-  }
-  .temoignage__auteur {
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
+  .temoignage__texte { color: var(--color-text); font-style: italic; flex: 1; margin-bottom: var(--space-sm); font-size: 0.95rem; }
+  .temoignage__auteur { color: var(--color-text-muted); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.15rem; }
+  .temoignage__auteur strong { color: var(--color-primary); font-weight: 700; font-family: var(--font-display); }
+  .temoignage__date { font-size: 0.8rem; }
 
   /* FAQ */
   .faq { display: flex; flex-direction: column; gap: var(--space-xs); }
-  .faq__item {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    padding: 0;
-    overflow: hidden;
-  }
-  .faq__question {
-    padding: var(--space-md);
-    cursor: pointer;
-    font-family: var(--font-display);
-    font-weight: 600;
-    color: var(--color-primary);
-    list-style: none;
-    position: relative;
-    padding-right: 3rem;
-  }
+  .faq__item { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 0; overflow: hidden; }
+  .faq__question { padding: var(--space-md); cursor: pointer; font-family: var(--font-display); font-weight: 600; color: var(--color-primary); list-style: none; position: relative; padding-right: 3rem; }
   .faq__question::-webkit-details-marker { display: none; }
-  .faq__question::after {
-    content: '+';
-    position: absolute;
-    right: var(--space-md);
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.5rem;
-    color: var(--color-accent-hover);
-    font-weight: 400;
-    line-height: 1;
-    transition: transform 0.2s ease;
-  }
+  .faq__question::after { content: '+'; position: absolute; right: var(--space-md); top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--color-accent-hover); font-weight: 400; line-height: 1; transition: transform 0.2s ease; }
   .faq__item[open] .faq__question::after { transform: translateY(-50%) rotate(45deg); }
-  .faq__reponse {
-    padding: 0 var(--space-md) var(--space-md);
-    color: var(--color-text-muted);
-  }
+  .faq__reponse { padding: 0 var(--space-md) var(--space-md); color: var(--color-text-muted); }
   .faq__reponse p { margin: 0; }
 
   /* CTA final */
-  .cta-final {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
-    color: #fff;
-  }
+  .cta-final { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%); color: #fff; }
   .cta-final h2, .cta-final .hero__lede { color: #fff; }
   .cta-final .hero__lede { color: rgba(255,255,255,0.9); }
 </style>

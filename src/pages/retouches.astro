@@ -32,6 +32,10 @@ const etapes = [
         Ourlets, reprises, ajustements, transformations : redonnez vie à vos vêtements
         préférés plutôt que de les remplacer. Travail soigné, tarifs justes, délais rapides.
       </p>
+      <figure class="avant-apres">
+        <img src="/images/retouche-chino.jpg" alt="Réparation d'une déchirure sur un chino gris — avant et après" loading="lazy" />
+        <figcaption>Un chino déchiré au niveau de la poche, réparé de manière discrète et solide.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -88,6 +92,23 @@ const etapes = [
     color: var(--color-text-muted);
     margin: var(--space-md) auto var(--space-lg);
     max-width: 620px;
+  }
+  .avant-apres {
+    margin: var(--space-xl) 0 0;
+    text-align: center;
+  }
+  .avant-apres img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin: 0 auto;
+  }
+  .avant-apres figcaption {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-top: var(--space-sm);
   }
   .eyebrow {
     font-family: var(--font-display);
