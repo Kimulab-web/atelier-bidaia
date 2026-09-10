@@ -1,7 +1,7 @@
 ---
 titre: Pack perfectionnement
-description: 8 séances pour progresser en profondeur. Enchaînez plusieurs projets, montez en technique, changez de style d'atelier autant que vous le souhaitez.
-duree: 8 séances de 2 h
+description: "8 séances pour maîtriser la machine, la préparation à la coupe et l'utilisation d'un patron d'accessoire ou de vêtement simple. Personnes plus avancées : je vous accompagne sur tout projet couture."
+duree: 8 séances de 2 heures
 niveau: tous niveaux
 prix: 240
 places: 3
@@ -13,13 +13,9 @@ stripeLink: https://buy.stripe.com/REMPLACER_PAR_LE_LIEN
 
 ## Pour qui ?
 
-Ce pack est fait pour vous si vous avez déjà quelques bases (ou si vous avez suivi le Pack découverte) et que vous voulez vraiment progresser : enchaîner les projets, aborder des techniques plus poussées, gagner en autonomie.
+Ce pack est fait pour vous si vous voulez vraiment progresser : apprendre à utiliser la machine à coudre, mais aussi comprendre et appliquer toute la technique de préparation à la coupe et apprendre à utiliser un patron d'accessoire ou de vêtement simple que vous réalisez.
 
-## Comment ça marche
-
-Comme le Pack découverte, mais sur 8 séances : vous choisissez vos projets, vous pouvez complètement en changer d'une séance à l'autre, et on adapte la progression à ce que vous voulez apprendre.
-
-Idéal pour aborder des pièces plus techniques : une chemise, une doublure, une fermeture invisible, un patron plus complexe…
+Pour les personnes plus avancées, je vous accompagne dans la réalisation de tout projet couture.
 
 ## Petits groupes
 
@@ -28,7 +24,6 @@ Les ateliers se déroulent avec **3 personnes maximum** — presque du sur-mesur
 ## Ce qui est inclus
 
 - L'accès aux machines et aux outils de l'atelier
+- Le tissu et les fournitures sont fournis
 - L'accompagnement technique sur tous vos projets
 - Une progression sur mesure, adaptée à vos envies
-
-Le tissu et les fournitures spécifiques restent à votre charge.

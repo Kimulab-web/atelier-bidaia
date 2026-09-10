@@ -1,7 +1,7 @@
 ---
 titre: Pack annuel
-description: 32 séances tout au long de l'année pour progresser en profondeur, dans la durée. La formule complète pour vraiment devenir autonome.
-duree: 32 séances de 2 h
+description: 32 séances tout au long de l'année pour progresser à votre rythme, quel que soit votre niveau — utilisation de la machine, préparation de l'ouvrage, projets de plus en plus élaborés. Je vous guide pas à pas.
+duree: 32 séances de 2 heures
 niveau: tous niveaux
 prix: 840
 places: 3
@@ -13,13 +13,13 @@ stripeLink: https://buy.stripe.com/REMPLACER_PAR_LE_LIEN
 
 ## Pour qui ?
 
-Ce pack est fait pour vous si vous voulez vous engager sur la durée : progresser régulièrement, mener plusieurs projets à bien, et faire de la couture une pratique installée dans votre quotidien.
+Ce pack est fait pour vous si vous voulez vous engager sur la durée. 32 séances tout au long de l'année pour vous permettre, quel que soit votre niveau, de progresser :
 
-## L'esprit
+- en utilisation de la machine
+- en préparation de l'ouvrage
+- en réalisation de projets de plus en plus élaborés
 
-32 séances réparties sur l'année, une fois par semaine. On suit votre progression, on multiplie les projets, on aborde toutes les techniques que vous voulez maîtriser. Vous choisissez ce que vous faites à chaque séance, je vous guide.
-
-Un rythme idéal pour vraiment gagner en autonomie — au bout de l'année, vous savez faire par vous-même.
+Je vous guide pas à pas, à votre rythme.
 
 ## Petits groupes
 
@@ -33,7 +33,6 @@ Possibilité de paiement échelonné : parlons-en.
 ## Ce qui est inclus
 
 - L'accès aux machines et aux outils de l'atelier
+- Le tissu et les fournitures sont fournis
 - L'accompagnement technique sur tous vos projets
 - Le suivi personnalisé sur toute l'année
-
-Le tissu et les fournitures spécifiques restent à votre charge.

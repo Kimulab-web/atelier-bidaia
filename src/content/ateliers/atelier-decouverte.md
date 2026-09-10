@@ -1,11 +1,11 @@
 ---
 titre: Atelier découverte couture
-description: Une séance de 1h30 pour apprivoiser la machine à coudre et repartir avec vos propres lingettes démaquillantes cousues main.
-duree: 1h30 · 1 séance
+description: Une séance de 2 heures pour apprivoiser la machine à coudre et repartir avec 1 ou 2 lingettes démaquillantes cousues main.
+duree: 2 heures · 1 séance
 niveau: débutant
 prix: 35
 places: 3
-horaire: Sur rendez-vous
+horaire: Le mercredi de 18 h à 20 h
 ordre: 10
 publie: true
 stripeLink: https://buy.stripe.com/REMPLACER_PAR_LE_LIEN
@@ -13,9 +13,9 @@ stripeLink: https://buy.stripe.com/REMPLACER_PAR_LE_LIEN
 
 ## Au programme
 
-- Prise en main de la machine à coudre : enfilage, canette, points de base
-- Réalisation guidée d'un lot de lingettes démaquillantes lavables
-- Repartir avec vos créations
+- Prise en main de la machine à coudre
+- Apprentissage ludique de l'utilisation de la machine
+- Réalisation guidée d'1 ou 2 lingettes démaquillantes avec lesquelles vous repartez
 
 ## Pour qui ?
 

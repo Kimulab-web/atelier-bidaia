@@ -4,17 +4,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const offres = [
   {
     emoji: '✂️',
-    titre: 'Ateliers de couture',
-    texte: "Séances en petit groupe, tous niveaux, pour apprendre à coudre en s'amusant. Machines et matériel fournis.",
+    titre: 'Ateliers de couture loisir',
+    texte: "Séances en individuel et en petits groupes, tous niveaux, pour apprendre à coudre en s'amusant. Machines et petit matériel fourni, si besoin.",
     lien: '/ateliers',
     cta: 'Voir les ateliers',
-  },
-  {
-    emoji: '👗',
-    titre: 'Cours particuliers',
-    texte: "Un projet précis, un rythme sur mesure. Séances individuelles adaptées à votre niveau et à votre envie.",
-    lien: '/contact',
-    cta: 'Demander un devis',
   },
   {
     emoji: '🧵',
@@ -28,7 +21,7 @@ const offres = [
 const arguments_ = [
   { emoji: '🎓', titre: 'Couturière diplômée', texte: "Formation professionnelle et années de pratique pour un travail soigné." },
   { emoji: '👥', titre: 'Très petits groupes', texte: "3 personnes maximum par atelier — presque du sur-mesure, avec un accompagnement individualisé." },
-  { emoji: '🧰', titre: 'Matériel fourni', texte: "Les machines à coudre et la mercerie peuvent être fournies." },
+  { emoji: '🧰', titre: 'Matériel fourni', texte: "Les machines à coudre et le petit matériel (fils, aiguilles, ciseaux…) peuvent être fournis." },
   { emoji: '☕', titre: 'Ambiance conviviale', texte: "On coud, on apprend, on discute, on prend un thé. Chez soi, mais mieux." },
 ];
 
@@ -63,11 +56,11 @@ const temoignages = [
 const faq = [
   {
     q: "Je n'ai jamais cousu, puis-je participer à un atelier ?",
-    r: "Bien sûr ! L'atelier découverte et le Pack découverte sont spécialement conçus pour les débutant·es. Aucune expérience n'est requise, tout le matériel est fourni et l'ambiance est bienveillante.",
+    r: "Bien sûr ! Toutes les formules d'ateliers sont conçues pour les débutant·es. Aucune expérience n'est requise. Je me mets à niveau de tous les participants. Pas de machine ? Aucune inquiétude, je peux en mettre une à votre disposition.",
   },
   {
     q: "Quand ont lieu les ateliers ?",
-    r: "Les packs (découverte, perfectionnement, annuel) se déroulent le jeudi de 18 h à 20 h. L'atelier découverte de 1h30 se cale sur rendez-vous selon vos disponibilités.",
+    r: "Les packs (découverte et perfectionnement) et l'abonnement annuel se déroulent le jeudi de 18 h à 20 h. L'atelier découverte a lieu le mercredi de 18 h à 20 h. L'atelier en individuel est proposé le vendredi matin de 10 h à 12 h et le mercredi de 14 h à 16 h.",
   },
   {
     q: "Faut-il apporter sa propre machine à coudre ?",
@@ -75,15 +68,15 @@ const faq = [
   },
   {
     q: "Combien de temps dure un atelier ?",
-    r: "L'atelier découverte dure 1h30 et se cale sur rendez-vous. Les packs (découverte, perfectionnement, annuel) sont des séances de 2 heures, le jeudi de 18h à 20h.",
+    r: "Quelle que soit la formule, un atelier dure 2 heures.",
   },
   {
     q: "Comment se déroule une retouche ?",
-    r: "Vous passez à l'atelier avec votre vêtement, nous en discutons ensemble, je vous fais un devis clair et un délai. La plupart des retouches simples sont prêtes sous 3 à 7 jours.",
+    r: "Vous prenez rendez-vous. Vous passez à l'atelier avec la pièce à retoucher / réparer afin que je fasse l'analyse précise de la prestation à réaliser. À la suite de cela je vous fais un devis clair et vous donne un délai de réalisation.",
   },
   {
     q: "Proposez-vous des chèques cadeaux ?",
-    r: "Oui, les ateliers et les créations peuvent être offerts. Contactez-moi pour un chèque cadeau personnalisé — parfait pour un anniversaire, la fête des mères ou Noël.",
+    r: "Oui, les ateliers peuvent être offerts. Contactez-moi pour un chèque cadeau personnalisé, parfait pour un cadeau d'anniversaire, de Noël, de fête des Mères…",
   },
   {
     q: "Où se situe l'atelier ?",
@@ -101,10 +94,10 @@ const faq = [
     <div class="container container--narrow" style="text-align: center;">
       <img src="/logo.png" alt="Atelier Bidaia Alaia" class="hero__logo" width="200" height="180" />
       <p class="hero__eyebrow">Couturière diplômée · Hasparren, Pays Basque</p>
-      <h1>Ateliers de couture &amp; services de réparation au Pays Basque, à Hasparren</h1>
+      <h1>Ateliers de couture loisir &amp; Services de retouche – réparation au Pays&nbsp;Basque, à Hasparren</h1>
       <p class="hero__lede">
-        Apprenez à coudre, faites retoucher vos vêtements ou offrez-vous une pièce unique —
-        dans un atelier chaleureux, en plein cœur du Pays Basque.
+        Apprenez à coudre et faites retoucher et réparer vos vêtements ou offrez-vous une
+        pièce unique dans un atelier chaleureux en plein cœur du Pays&nbsp;Basque.
       </p>
       <div class="hero__cta">
         <a href="/ateliers" class="btn">Découvrir les ateliers</a>
@@ -117,7 +110,7 @@ const faq = [
   <section class="section">
     <div class="container">
       <header class="section-head">
-        <p class="eyebrow">Nos offres</p>
+        <p class="eyebrow">Mes offres</p>
         <h2>Ce que propose l'atelier Bidaia Alaia</h2>
       </header>
       <div class="grid grid--3">
@@ -137,8 +130,8 @@ const faq = [
   <section class="section section--soft">
     <div class="container">
       <header class="section-head">
-        <p class="eyebrow">Pourquoi l'atelier</p>
-        <h2>Pourquoi faire son atelier de couture avec moi au Pays&nbsp;Basque ?</h2>
+        <p class="eyebrow">Pourquoi venir chez Atelier Bidaia Alaia ?</p>
+        <h2>Pourquoi faire de la couture avec moi au Pays&nbsp;Basque ?</h2>
       </header>
       <div class="grid grid--4">
         {arguments_.map((a) => (
