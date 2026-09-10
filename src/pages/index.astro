@@ -38,19 +38,25 @@ const temoignages = [
     auteur: 'Céline',
     date: 'il y a 2 mois',
     note: 5,
-    texte: "J'ai acheté une robe cut-out qui me plaisait énormément mais je l'avais trop large au niveau du buste, de la taille et aussi trop longue. Sandra avec ses petits […]",
-  },
-  {
-    auteur: 'Celine',
-    date: 'il y a 1 mois',
-    note: 5,
-    texte: "Merci à Sandra pour son intervention sur ma robe. Elle est patiente, elle est force de proposition et a des doigts de fée. Je la recommande les yeux fermés !",
+    texte: "J'ai acheté une robe cut-out qui me plaisait énormément mais je l'avais trop large au niveau du buste, de la taille et aussi trop longue. Sandra avec ses petits doigts de fée est passée par là et elle est maintenant juste magnifique 😍. Je suis ravie ! Un grand merci pour votre travail.",
   },
   {
     auteur: 'Martine P.',
     date: 'il y a 4 mois',
     note: 5,
-    texte: "Depuis septembre dernier je suis inscrite à des ateliers de couture hebdomadaires dont l'animatrice est Sandra ; j'étais tout à fait novice, et Sandra m'a […]",
+    texte: "Depuis septembre dernier je suis inscrite à des ateliers de couture hebdomadaires dont l'animatrice est Sandra ; j'étais tout à fait novice, et Sandra m'a initiée avec patience et pédagogie. J'ai commencé par un tote bag, puis une pochette, puis 1 et 2 robes enfants — et grâce à elle, j'ai l'impression que je peux tout faire. Merci Sandra !",
+  },
+  {
+    auteur: 'Sandie',
+    date: 'il y a 3 mois',
+    note: 5,
+    texte: "J'ai fait appel à l'atelier Bidaia Alaia à plusieurs reprises : raccourcir des pantalons, transformer une robe, remplacer la fermeture éclair d'un manteau en peau lainée, ajuster deux hauts. Grâce à Sandra, je vais pouvoir reporter des vêtements que j'adore mais qui prenaient la poussière. Je la recommande à 100 % pour son professionnalisme et son excellent rapport qualité-prix.",
+  },
+  {
+    auteur: 'Céline',
+    date: 'il y a 1 mois',
+    note: 5,
+    texte: "Merci à Sandra pour son intervention sur ma robe. Elle est patiente, elle est force de proposition et a des doigts de fée. Je la recommande les yeux fermés !",
   },
 ];
 
@@ -166,7 +172,7 @@ const faq = [
         <h2>Ce que disent les client·es</h2>
         <p class="section-lede">Avis authentiques laissés sur Google.</p>
       </header>
-      <div class="grid grid--3">
+      <div class="grid grid--4">
         {temoignages.map((t) => (
           <blockquote class="temoignage">
             <div class="temoignage__stars" aria-label={`${t.note} étoiles sur 5`}>
