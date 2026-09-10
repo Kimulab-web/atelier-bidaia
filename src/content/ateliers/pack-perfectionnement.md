@@ -2,7 +2,7 @@
 titre: Pack perfectionnement
 description: 8 séances pour progresser en profondeur. Enchaînez plusieurs projets, montez en technique, changez de style d'atelier autant que vous le souhaitez.
 duree: 8 séances de 2 h
-niveau: intermédiaire
+niveau: tous niveaux
 prix: 240
 places: 3
 horaire: Le jeudi de 18 h à 20 h
