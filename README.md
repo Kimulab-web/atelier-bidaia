@@ -50,3 +50,4 @@ Le lien est renseigné dans le frontmatter du fichier `.md` de l'atelier
 - Places limitées : configurées dans Stripe (inventory)
 - Rappels et reçus : gérés automatiquement par Stripe
 - Annulations : à traiter manuellement dans le dashboard Stripe
+
