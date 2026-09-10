@@ -7,27 +7,168 @@ const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
   .sort((a, b) => a.data.ordre - b.data.ordre);
 ---
 
-<BaseLayout title="Ateliers de couture" description="Découvrez les ateliers de couture proposés par Atelier Bidaia : débutant, intermédiaire, sur mesure.">
+<BaseLayout
+  title="Ateliers de couture au Pays Basque"
+  description="Cours et ateliers de couture à Hasparren, Pays Basque. Petits groupes (3 personnes max), tous niveaux, machines fournies. Découverte, packs de 4, 8 ou 32 séances."
+>
   <section class="section">
     <div class="container">
-      <header style="text-align: center; margin-bottom: var(--space-xl);">
-        <h1>Ateliers de couture</h1>
-        <p style="color: var(--color-text-muted); max-width: 600px; margin: var(--space-sm) auto 0;">
-          Des séances en petit groupe pour apprendre, progresser, ou juste passer
-          un bon moment autour d'une machine à coudre.
+      <header class="page-head">
+        <p class="eyebrow">Ateliers</p>
+        <h1>Ateliers de couture au Pays Basque, à Hasparren</h1>
+        <p class="page-lede">
+          Des cours de couture en très petit groupe (3 personnes maximum),
+          au cœur du Pays Basque, pour apprendre, progresser ou simplement
+          passer un bon moment autour d'une machine à coudre.
         </p>
       </header>
 
-      {ateliers.length > 0 ? (
-        <div class="grid">
-          {ateliers.map((atelier) => <AtelierCard atelier={atelier} />)}
-        </div>
-      ) : (
-        <p style="text-align: center; color: var(--color-text-muted);">
-          Aucun atelier programmé pour le moment.
-          <a href="/contact">Contactez-nous</a> pour être informé·e des prochaines dates.
-        </p>
-      )}
+      <div class="ateliers-grid">
+        {ateliers.map((atelier) => <AtelierCard atelier={atelier} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO : comment ça se passe -->
+  <section class="section section--soft">
+    <div class="container container--narrow">
+      <h2>Comment se déroulent les ateliers de couture ?</h2>
+
+      <p>
+        Tous les <strong>ateliers de couture</strong> d'Atelier Bidaia Alaia se déroulent à
+        Hasparren, dans un espace lumineux et bien équipé de l'Espace Entreprise Aldatu, au
+        cœur du <strong>Pays Basque</strong>. Nous vous accueillons dans un cadre chaleureux
+        et convivial pour partager la passion de la couture.
+      </p>
+
+      <p>
+        Les séances hebdomadaires (packs de 4, 8 ou 32 séances) ont lieu <strong>le jeudi de
+        18 h à 20 h</strong>. L'atelier découverte d'1h30 se cale quant à lui sur rendez-vous
+        selon vos disponibilités — parfait si vous voulez tester avant de vous engager.
+      </p>
+
+      <h3>Un accompagnement quasi individuel</h3>
+      <p>
+        Nous limitons chaque groupe à <strong>3 personnes maximum</strong>. C'est ce qui fait
+        toute la différence par rapport à d'autres cours de couture : je peux réellement
+        m'adapter à votre niveau, à votre projet et à votre rythme. Que vous soyez débutante
+        absolue ou déjà à l'aise avec une machine, vous progressez sans être noyée dans un
+        groupe trop grand.
+      </p>
+
+      <h3>Vous choisissez votre projet</h3>
+      <p>
+        Contrairement à un cours classique où tout le monde réalise la même pièce, ici
+        <strong>vous choisissez ce que vous voulez apprendre à coudre</strong> : un tote bag,
+        une trousse, une jupe, une robe pour enfant, une chemise, un pantalon… Je vous
+        conseille sur le patron, le tissu, les techniques, et je vous guide pas à pas
+        jusqu'à la finition.
+      </p>
+
+      <h3>Le matériel est là</h3>
+      <p>
+        Les machines à coudre professionnelles et la petite mercerie de base sont
+        disponibles à l'atelier — vous n'avez pas besoin d'être équipée pour commencer. Le
+        tissu et les fournitures spécifiques à votre projet restent à votre charge, et je
+        vous oriente vers les bonnes adresses en fonction de votre budget.
+      </p>
+
+      <h3>Pour qui ?</h3>
+      <p>
+        Les <strong>cours de couture à Hasparren</strong> sont ouverts à toutes et tous, à
+        partir de 15 ans. Que vous soyez :
+      </p>
+      <ul>
+        <li><strong>Grand·e débutant·e</strong> qui n'a jamais approché une machine à coudre</li>
+        <li><strong>Passionné·e</strong> qui a envie de reprendre après plusieurs années</li>
+        <li><strong>Couturier·ère amateur</strong> qui souhaite se perfectionner sur une technique précise</li>
+        <li>Quelqu'un qui a envie de <strong>découvrir un savoir-faire manuel</strong> et de créer de ses mains</li>
+      </ul>
+      <p>
+        …il y a une formule qui vous correspond. Et si vous hésitez,
+        <a href="/contact">contactez-moi</a>, je vous conseille avec plaisir.
+      </p>
+
+      <h3>Sandra, couturière diplômée au Pays Basque</h3>
+      <p>
+        Je suis Sandra, couturière diplômée, et j'ai créé Atelier Bidaia Alaia à Hasparren
+        pour transmettre ma passion. Les avis Google le confirment : mes élèves apprécient
+        la patience, la pédagogie et la bonne humeur qui règnent dans l'atelier. La couture
+        est un savoir-faire qui se transmet, et c'est ce que je fais avec grand plaisir à
+        chaque séance.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="section cta-final">
+    <div class="container container--narrow" style="text-align: center;">
+      <h2>Envie d'essayer ?</h2>
+      <p class="page-lede">
+        L'atelier découverte de 1h30 est le point de départ idéal — sans engagement,
+        pour tester la couture et voir si ça vous plaît.
+      </p>
+      <a href="/contact" class="btn">Réserver une découverte</a>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .page-head { text-align: center; margin-bottom: var(--space-xl); }
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--color-secondary-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-xs);
+  }
+  .page-lede {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    max-width: 640px;
+    margin: var(--space-sm) auto 0;
+  }
+
+  /* Grille : 4 cartes en 1 ligne sur desktop */
+  .ateliers-grid {
+    display: grid;
+    gap: var(--space-md);
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 640px) {
+    .ateliers-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1000px) {
+    .ateliers-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* Section SEO */
+  .section--soft { background: var(--color-primary-soft); }
+  .section--soft h2 {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+  }
+  .section--soft h3 {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+    color: var(--color-primary);
+  }
+  .section--soft ul {
+    margin: var(--space-sm) 0 var(--space-md) var(--space-md);
+  }
+  .section--soft ul li {
+    margin-bottom: 0.4rem;
+  }
+  .section--soft p {
+    line-height: 1.7;
+  }
+
+  .cta-final {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+    color: #fff;
+  }
+  .cta-final h2, .cta-final .page-lede { color: #fff; }
+  .cta-final .page-lede { color: rgba(255,255,255,0.9); }
+</style>
