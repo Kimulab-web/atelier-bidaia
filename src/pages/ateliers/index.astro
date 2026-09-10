@@ -29,6 +29,26 @@ const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
     </div>
   </section>
 
+  <!-- EXEMPLES DE RÉALISATIONS -->
+  <section class="section">
+    <div class="container">
+      <header class="page-head">
+        <p class="eyebrow">Exemples</p>
+        <h2>Ce que vous pouvez réaliser en atelier</h2>
+        <p class="page-lede">
+          Un aperçu des créations cousues par les élèves — lingettes lavables, pochettes,
+          tote bags, petits accessoires… Vous choisissez votre projet, je vous accompagne.
+        </p>
+      </header>
+      <div class="realisations-grid">
+        <figure><img src="/images/cotons-panier.jpg" alt="Lot de lingettes démaquillantes lavables dans leur panier" loading="lazy" /></figure>
+        <figure><img src="/images/realisation-lingettes-detail.jpg" alt="Détail des lingettes cousues et vue du panier de rangement" loading="lazy" /></figure>
+        <figure><img src="/images/cotons.jpg" alt="Lingettes lavables cousues main, motif fleuri" loading="lazy" /></figure>
+        <figure><img src="/images/creations-tote.jpg" alt="Tote bag léopard et créations diverses réalisées à l'atelier" loading="lazy" /></figure>
+      </div>
+    </div>
+  </section>
+
   <!-- SEO : comment ça se passe -->
   <section class="section section--soft">
     <div class="container container--narrow">
@@ -142,6 +162,33 @@ const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
   }
   @media (min-width: 1000px) {
     .ateliers-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* Réalisations */
+  .realisations-grid {
+    display: grid;
+    gap: var(--space-sm);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 900px) {
+    .realisations-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  .realisations-grid figure {
+    margin: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .realisations-grid figure:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .realisations-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
   }
 
   /* Section SEO */
