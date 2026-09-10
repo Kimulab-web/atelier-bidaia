@@ -213,9 +213,11 @@ const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
   }
 
   .cta-final {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
-    color: #fff;
+    background: var(--color-primary-soft);
+    border-top: 3px solid var(--color-accent);
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
   }
-  .cta-final h2, .cta-final .page-lede { color: #fff; }
-  .cta-final .page-lede { color: rgba(255,255,255,0.9); }
+  .cta-final h2 { color: var(--color-primary); }
+  .cta-final .page-lede { color: var(--color-text-muted); }
 </style>
