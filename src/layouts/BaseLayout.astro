@@ -11,8 +11,8 @@ interface Props {
 
 const {
   title,
-  description = "Atelier Bidaia — cours et ateliers de couture au Pays Basque. Créations sur mesure et boutique en ligne.",
-  image = '/og-image.jpg',
+  description = "Atelier Bidaia Alaia — Couturière diplômée au Pays Basque. Cours et ateliers de couture, créations sur mesure et boutique en ligne.",
+  image = '/logo.png',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -27,13 +27,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
 
-    <title>{title} — Atelier Bidaia</title>
+    <title>{title} — Atelier Bidaia Alaia</title>
     <meta name="description" content={description} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={`${title} — Atelier Bidaia`} />
+    <meta property="og:title" content={`${title} — Atelier Bidaia Alaia`} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.url)} />
     <meta property="og:locale" content="fr_FR" />
@@ -43,12 +43,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
-    <!-- Typographie -->
+    <!-- Typographies : Quicksand (display) + Nunito (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Quicksand:wght@500;600;700&display=swap"
     />
   </head>
   <body>

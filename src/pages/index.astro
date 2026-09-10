@@ -11,7 +11,9 @@ const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
 <BaseLayout title="Accueil">
   <section class="hero">
     <div class="container container--narrow" style="text-align: center;">
-      <h1>Atelier Bidaia</h1>
+      <img src="/logo.png" alt="Atelier Bidaia Alaia" class="hero__logo" width="200" height="180" />
+      <h1>Atelier Bidaia Alaia</h1>
+      <p class="hero__tagline">Couturière diplômée</p>
       <p class="hero__lede">
         Cours de couture, créations sur mesure et pièces uniques,
         au cœur du Pays Basque.
@@ -41,11 +43,11 @@ const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
     </div>
   </section>
 
-  <section class="section" style="background: var(--color-surface);">
+  <section class="section section--soft">
     <div class="container container--narrow" style="text-align: center;">
       <h2>L'atelier</h2>
       <p>
-        Dans un espace lumineux à Hasparren, Atelier Bidaia propose des cours
+        Dans un espace lumineux à Hasparren, Atelier Bidaia Alaia propose des cours
         de couture pour tous les niveaux, des créations sur mesure et une
         petite boutique de pièces confectionnées avec soin.
       </p>
@@ -63,18 +65,35 @@ const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
 
 <style>
   .hero {
-    padding: var(--space-2xl) 0;
-    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-surface) 100%);
+    padding: var(--space-xl) 0 var(--space-2xl);
+    background: linear-gradient(180deg, var(--color-primary-soft) 0%, var(--color-bg) 100%);
+  }
+  .hero__logo {
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto var(--space-sm);
+  }
+  .hero__tagline {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--color-accent-hover);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    letter-spacing: 0.05em;
   }
   .hero__lede {
     font-size: 1.25rem;
     color: var(--color-text-muted);
-    margin: var(--space-md) 0 var(--space-lg);
+    margin: 0 auto var(--space-lg);
+    max-width: 540px;
   }
   .hero__cta {
     display: flex;
     gap: var(--space-sm);
     justify-content: center;
     flex-wrap: wrap;
+  }
+  .section--soft {
+    background: var(--color-primary-soft);
   }
 </style>

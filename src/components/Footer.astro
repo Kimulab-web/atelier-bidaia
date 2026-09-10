@@ -5,8 +5,8 @@ const year = new Date().getFullYear();
 <footer class="site-footer">
   <div class="container footer-inner">
     <div>
-      <p class="footer-brand">Atelier Bidaia</p>
-      <p class="footer-tagline">Cours et créations couture au Pays Basque</p>
+      <p class="footer-brand">Atelier Bidaia Alaia</p>
+      <p class="footer-tagline">Couturière diplômée · Pays Basque</p>
     </div>
     <div>
       <p><strong>Contact</strong></p>
@@ -14,20 +14,20 @@ const year = new Date().getFullYear();
       <p><a href="mailto:contact@atelier-bidaia.fr">contact@atelier-bidaia.fr</a></p>
     </div>
     <div>
-      <p><strong>Suivez-nous</strong></p>
+      <p><strong>Suivez l'atelier</strong></p>
       <p><a href="https://instagram.com/atelier.bidaia" target="_blank" rel="noopener">Instagram</a></p>
       <p><a href="https://facebook.com/atelier.bidaia" target="_blank" rel="noopener">Facebook</a></p>
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>© {year} Atelier Bidaia. Tous droits réservés. — <a href="/mentions-legales">Mentions légales</a></p>
+    <p>© {year} Atelier Bidaia Alaia. Tous droits réservés. — <a href="/mentions-legales">Mentions légales</a></p>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    background: var(--color-text);
-    color: var(--color-bg);
+    background: var(--color-primary);
+    color: #fff;
     margin-top: var(--space-2xl);
     padding: var(--space-xl) 0 var(--space-md);
   }
@@ -38,18 +38,21 @@ const year = new Date().getFullYear();
     margin-bottom: var(--space-lg);
   }
   .footer-brand {
-    font-family: var(--font-serif);
+    font-family: var(--font-display);
     font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
     margin-bottom: var(--space-xs);
   }
-  .footer-tagline { color: rgba(250, 247, 242, 0.7); font-size: 0.9rem; }
-  .site-footer a { color: var(--color-bg); }
+  .footer-tagline { color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; }
+  .site-footer a { color: #fff; }
   .site-footer a:hover { color: var(--color-accent); }
+  .site-footer strong { color: var(--color-secondary); }
   .footer-bottom {
-    border-top: 1px solid rgba(250, 247, 242, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     padding-top: var(--space-md);
     font-size: 0.85rem;
-    color: rgba(250, 247, 242, 0.6);
+    color: rgba(255, 255, 255, 0.6);
     text-align: center;
   }
 </style>

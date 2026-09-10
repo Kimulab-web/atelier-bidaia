@@ -12,8 +12,12 @@ const currentPath = Astro.url.pathname;
 
 <header class="site-header">
   <div class="container header-inner">
-    <a href="/" class="brand">
-      <span class="brand__name">Atelier Bidaia</span>
+    <a href="/" class="brand" aria-label="Atelier Bidaia Alaia — Accueil">
+      <img src="/logo.png" alt="Atelier Bidaia Alaia" class="brand__logo" width="80" height="70" />
+      <span class="brand__text">
+        <span class="brand__name">Atelier Bidaia Alaia</span>
+        <span class="brand__tagline">Couturière diplômée</span>
+      </span>
     </a>
     <nav aria-label="Navigation principale">
       <ul>
@@ -39,6 +43,7 @@ const currentPath = Astro.url.pathname;
     position: sticky;
     top: 0;
     z-index: 10;
+    box-shadow: var(--shadow-sm);
   }
   .header-inner {
     display: flex;
@@ -46,12 +51,34 @@ const currentPath = Astro.url.pathname;
     justify-content: space-between;
     padding-top: var(--space-sm);
     padding-bottom: var(--space-sm);
+    gap: var(--space-md);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--color-primary);
+  }
+  .brand__logo {
+    height: 56px;
+    width: auto;
+  }
+  .brand__text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
   }
   .brand__name {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--color-text);
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+  .brand__tagline {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--color-accent-hover);
+    font-weight: 600;
     letter-spacing: 0.02em;
   }
   nav ul {
@@ -64,17 +91,20 @@ const currentPath = Astro.url.pathname;
   nav a {
     color: var(--color-text);
     font-size: 0.95rem;
+    font-weight: 600;
     padding: 0.25rem 0;
     border-bottom: 2px solid transparent;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease, color 0.2s ease;
   }
   nav a:hover,
   nav a.is-active {
-    color: var(--color-accent);
+    color: var(--color-primary);
     border-color: var(--color-accent);
   }
-  @media (max-width: 640px) {
+  @media (max-width: 720px) {
     .header-inner { flex-direction: column; gap: var(--space-sm); }
+    .brand__text { display: none; }
+    .brand__logo { height: 64px; }
     nav ul { flex-wrap: wrap; justify-content: center; gap: var(--space-sm) var(--space-md); }
   }
 </style>
