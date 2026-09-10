@@ -12,6 +12,7 @@ const ateliers = defineCollection({
       prix: z.number(), // en euros
       places: z.number(), // nombre max de participants
       dates: z.array(z.date()).optional(),
+      horaire: z.string().optional(),
       image: image().optional(),
       stripeLink: z.string().url().optional(),
       ordre: z.number().default(100),

@@ -6,17 +6,33 @@ interface Props {
 }
 
 const { atelier } = Astro.props;
-const { titre, description, duree, niveau, prix, places } = atelier.data;
+const { titre, description, duree, niveau, prix, places, horaire } = atelier.data;
 ---
 
 <article class="card">
   <div class="card__body">
     <h3 class="card__title">{titre}</h3>
-    <p class="card__meta">{duree} · {niveau} · {places} places max</p>
+    <p class="card__meta">{duree} · {niveau}</p>
+    {horaire && <p class="card__horaire">🗓️ {horaire}</p>}
     <p>{description}</p>
     <p class="card__price">{prix} €</p>
+    <p class="card__places">{places} places max</p>
     <a href={`/ateliers/${atelier.id}`} class="btn" style="margin-top: var(--space-sm);">
       Voir l'atelier
     </a>
   </div>
 </article>
+
+<style>
+  .card__horaire {
+    font-size: 0.85rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+  }
+  .card__places {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin: 0.25rem 0 0;
+  }
+</style>

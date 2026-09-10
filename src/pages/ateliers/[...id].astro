@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 
 const { atelier } = Astro.props;
 const { Content } = await render(atelier);
-const { titre, description, duree, niveau, prix, places, dates, stripeLink } = atelier.data;
+const { titre, description, duree, niveau, prix, places, dates, horaire, stripeLink } = atelier.data;
 
 const formatDate = (d: Date) =>
   d.toLocaleDateString('fr-FR', {
@@ -33,6 +33,7 @@ const formatDate = (d: Date) =>
       <header class="atelier-header">
         <h1>{titre}</h1>
         <p class="atelier-meta">{duree} · Niveau {niveau} · {places} places max</p>
+        {horaire && <p class="atelier-horaire">🗓️ {horaire}</p>}
       </header>
 
       <div class="atelier-body">
@@ -83,6 +84,12 @@ const formatDate = (d: Date) =>
   .atelier-meta {
     color: var(--color-text-muted);
     margin-top: var(--space-xs);
+  }
+  .atelier-horaire {
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-top: var(--space-xs);
+    font-family: var(--font-display);
   }
   .lede {
     font-size: 1.15rem;

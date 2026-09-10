@@ -4,7 +4,8 @@ description: Une séance de 1h30 pour apprivoiser la machine à coudre et repart
 duree: 1h30 · 1 séance
 niveau: débutant
 prix: 35
-places: 6
+places: 3
+horaire: Sur rendez-vous
 ordre: 10
 publie: true
 stripeLink: https://buy.stripe.com/REMPLACER_PAR_LE_LIEN
@@ -25,3 +26,7 @@ Cet atelier est fait pour vous si vous n'avez jamais touché une machine à coud
 - Machine à coudre et matériel fournis
 - Tissu et fournitures pour les lingettes
 - Vos créations à emporter
+
+## Petits groupes
+
+Les ateliers se déroulent avec **3 personnes maximum** — presque du sur-mesure, avec un accompagnement individualisé.
