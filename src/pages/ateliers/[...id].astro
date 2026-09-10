@@ -52,18 +52,25 @@ const formatDate = (d: Date) =>
 
       <div class="atelier-booking">
         <p class="atelier-price">{prix} €</p>
-        {stripeLink ? (
-          <a href={stripeLink} class="btn" target="_blank" rel="noopener">
-            Réserver ma place
-          </a>
+        {stripeLink && !stripeLink.includes('REMPLACER') ? (
+          <>
+            <a href={stripeLink} class="btn" target="_blank" rel="noopener">
+              Réserver l'atelier
+            </a>
+            <p class="booking-note">
+              Paiement sécurisé via Stripe. Confirmation par e-mail immédiate.
+            </p>
+          </>
         ) : (
-          <a href="/contact" class="btn btn--ghost">
-            Nous contacter pour réserver
-          </a>
+          <>
+            <a href="/contact" class="btn">
+              Réserver l'atelier
+            </a>
+            <p class="booking-note">
+              Nous contacter pour vérifier la disponibilité et réserver votre place.
+            </p>
+          </>
         )}
-        <p class="booking-note">
-          Paiement sécurisé via Stripe. Confirmation par e-mail immédiate.
-        </p>
       </div>
     </div>
   </section>

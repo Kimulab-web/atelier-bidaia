@@ -6,24 +6,43 @@ interface Props {
 }
 
 const { atelier } = Astro.props;
-const { titre, description, duree, niveau, prix, places, horaire } = atelier.data;
+const { titre, description, duree, niveau, prix, places, horaire, stripeLink } = atelier.data;
+
+// Lien de réservation valide seulement si Stripe est renseigné (pas le placeholder)
+const stripeValide = stripeLink && !stripeLink.includes('REMPLACER');
 ---
 
 <article class="card">
   <div class="card__body">
-    <h3 class="card__title">{titre}</h3>
+    <h3 class="card__title">
+      <a href={`/ateliers/${atelier.id}`}>{titre}</a>
+    </h3>
     <p class="card__meta">{duree} · {niveau}</p>
     {horaire && <p class="card__horaire">🗓️ {horaire}</p>}
     <p>{description}</p>
     <p class="card__price">{prix} €</p>
     <p class="card__places">{places} places max</p>
-    <a href={`/ateliers/${atelier.id}`} class="btn" style="margin-top: var(--space-sm);">
-      Voir l'atelier
-    </a>
+    {stripeValide ? (
+      <a href={stripeLink} class="btn" target="_blank" rel="noopener" style="margin-top: var(--space-sm);">
+        Réserver l'atelier
+      </a>
+    ) : (
+      <a href="/contact" class="btn" style="margin-top: var(--space-sm);">
+        Réserver l'atelier
+      </a>
+    )}
+    <a href={`/ateliers/${atelier.id}`} class="card__details">En savoir plus →</a>
   </div>
 </article>
 
 <style>
+  .card__title a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .card__title a:hover {
+    color: var(--color-accent-hover);
+  }
   .card__horaire {
     font-size: 0.85rem;
     color: var(--color-primary);
@@ -34,5 +53,16 @@ const { titre, description, duree, niveau, prix, places, horaire } = atelier.dat
     font-size: 0.8rem;
     color: var(--color-text-muted);
     margin: 0.25rem 0 0;
+  }
+  .card__details {
+    display: block;
+    text-align: center;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+  .card__details:hover {
+    color: var(--color-primary);
   }
 </style>
