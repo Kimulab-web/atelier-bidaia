@@ -27,8 +27,8 @@ const offres = [
 
 const arguments_ = [
   { emoji: '🎓', titre: 'Couturière diplômée', texte: "Formation professionnelle et années de pratique pour un travail soigné." },
-  { emoji: '👥', titre: 'Petits groupes', texte: "Maximum 6 personnes par atelier pour un vrai accompagnement personnalisé." },
-  { emoji: '🧰', titre: 'Matériel fourni', texte: "Machines à coudre, tissus, mercerie : venez les mains dans les poches." },
+  { emoji: '👥', titre: 'Très petits groupes', texte: "3 personnes maximum par atelier — presque du sur-mesure, avec un accompagnement individualisé." },
+  { emoji: '🧰', titre: 'Matériel fourni', texte: "Les machines à coudre et la mercerie peuvent être fournies." },
   { emoji: '☕', titre: 'Ambiance conviviale', texte: "On coud, on apprend, on discute, on prend un thé. Chez soi, mais mieux." },
 ];
 
@@ -63,7 +63,11 @@ const temoignages = [
 const faq = [
   {
     q: "Je n'ai jamais cousu, puis-je participer à un atelier ?",
-    r: "Bien sûr ! Les ateliers d'initiation sont spécialement conçus pour les débutant·es. Aucune expérience n'est requise, tout le matériel est fourni et l'ambiance est bienveillante.",
+    r: "Bien sûr ! L'atelier découverte et le Pack découverte sont spécialement conçus pour les débutant·es. Aucune expérience n'est requise, tout le matériel est fourni et l'ambiance est bienveillante.",
+  },
+  {
+    q: "Quand ont lieu les ateliers ?",
+    r: "Les packs (découverte, perfectionnement, annuel) se déroulent le jeudi de 18 h à 20 h. L'atelier découverte de 1h30 se cale sur rendez-vous selon vos disponibilités.",
   },
   {
     q: "Faut-il apporter sa propre machine à coudre ?",
@@ -89,8 +93,8 @@ const faq = [
 ---
 
 <BaseLayout
-  title="Accueil"
-  description="Atelier Bidaia Alaia à Hasparren — Ateliers de couture, cours particuliers et services de retouches au Pays Basque. Couturière diplômée."
+  title="Atelier de couture au Pays Basque"
+  description="Atelier de couture au Pays Basque à Hasparren — Cours, ateliers, retouches et créations sur mesure. Couturière diplômée, groupes de 3 personnes maximum."
 >
   <!-- HERO -->
   <section class="hero">
@@ -134,7 +138,7 @@ const faq = [
     <div class="container">
       <header class="section-head">
         <p class="eyebrow">Pourquoi l'atelier</p>
-        <h2>Pourquoi l'atelier Bidaia Alaia</h2>
+        <h2>Pourquoi faire son atelier de couture avec moi au Pays Basque ?</h2>
       </header>
       <div class="grid grid--4">
         {arguments_.map((a) => (
