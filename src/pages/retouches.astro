@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const tarifs = [
+  { prestation: "Ourlet simple (pantalon, jupe)", prix: "à partir de 10 €" },
+  { prestation: "Ourlet jean avec bord d'origine", prix: "à partir de 15 €" },
+  { prestation: "Reprise de couture", prix: "à partir de 8 €" },
+  { prestation: "Changement de fermeture éclair", prix: "à partir de 15 €" },
+  { prestation: "Ajustement taille / carrure (chemise, veste)", prix: "à partir de 20 €" },
+  { prestation: "Reprise de doublure", prix: "sur devis" },
+  { prestation: "Transformation d'un vêtement", prix: "sur devis" },
+  { prestation: "Broderie et customisation", prix: "sur devis" },
+];
+
+const etapes = [
+  { num: "1", titre: "Vous passez à l'atelier", texte: "Sans rendez-vous aux horaires d'ouverture, ou sur rendez-vous par téléphone." },
+  { num: "2", titre: "On regarde ensemble", texte: "Je vous conseille la meilleure solution et vous propose un devis clair, sans surprise." },
+  { num: "3", titre: "Je réalise la retouche", texte: "La plupart des retouches simples sont prêtes en 3 à 7 jours ouvrés." },
+  { num: "4", titre: "Vous récupérez votre vêtement", texte: "Prêt à porter, comme neuf. Paiement à la remise." },
+];
+---
+
+<BaseLayout
+  title="Retouches & réparations"
+  description="Retouches, réparations et transformations de vêtements à Hasparren, Pays Basque. Ourlets, reprises, ajustements — travail soigné par une couturière diplômée."
+>
+  <section class="section">
+    <div class="container container--narrow">
+      <p class="eyebrow" style="text-align: center;">Services</p>
+      <h1 style="text-align: center;">Retouches &amp; réparations</h1>
+      <p class="lede" style="text-align: center;">
+        Ourlets, reprises, ajustements, transformations : redonnez vie à vos vêtements
+        préférés plutôt que de les remplacer. Travail soigné, tarifs justes, délais rapides.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container container--narrow">
+      <h2 style="text-align: center; margin-bottom: var(--space-lg);">Comment ça se passe ?</h2>
+      <ol class="etapes">
+        {etapes.map((e) => (
+          <li class="etape">
+            <span class="etape__num">{e.num}</span>
+            <div>
+              <h3>{e.titre}</h3>
+              <p>{e.texte}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow">
+      <h2 style="text-align: center; margin-bottom: var(--space-sm);">Tarifs indicatifs</h2>
+      <p style="text-align: center; color: var(--color-text-muted); margin-bottom: var(--space-lg);">
+        Les tarifs définitifs sont établis sur devis après examen du vêtement.
+      </p>
+      <div class="tarifs">
+        {tarifs.map((t) => (
+          <div class="tarif">
+            <span class="tarif__prestation">{t.prestation}</span>
+            <span class="tarif__prix">{t.prix}</span>
+          </div>
+        ))}
+      </div>
+      <p style="text-align: center; margin-top: var(--space-lg); color: var(--color-text-muted); font-size: 0.9rem;">
+        Un doute sur une réparation ? Passez à l'atelier ou envoyez-moi une photo par message —
+        je vous dis tout de suite si c'est faisable et à quel prix.
+      </p>
+    </div>
+  </section>
+
+  <section class="section cta-final">
+    <div class="container container--narrow" style="text-align: center;">
+      <h2>Un vêtement à retoucher ?</h2>
+      <p class="lede">Passez à l'atelier ou écrivez-moi pour un devis.</p>
+      <a href="/contact" class="btn">Nous contacter</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lede {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    margin: var(--space-md) auto var(--space-lg);
+    max-width: 620px;
+  }
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--color-secondary-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-xs);
+  }
+  .section--soft { background: var(--color-primary-soft); }
+
+  .etapes {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  .etape {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+    background: var(--color-surface);
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+  }
+  .etape__num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--color-accent);
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .etape h3 { margin-bottom: 0.25rem; font-size: 1.1rem; }
+  .etape p { margin: 0; color: var(--color-text-muted); }
+
+  .tarifs {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+  }
+  .tarif {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+    gap: var(--space-md);
+  }
+  .tarif:last-child { border-bottom: none; }
+  .tarif__prestation { color: var(--color-text); }
+  .tarif__prix {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-accent-hover);
+    white-space: nowrap;
+  }
+
+  .cta-final {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+    color: #fff;
+  }
+  .cta-final h2, .cta-final .lede { color: #fff; }
+  .cta-final .lede { color: rgba(255,255,255,0.9); }
+</style>

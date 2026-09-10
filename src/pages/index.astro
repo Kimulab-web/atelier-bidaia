@@ -1,99 +1,402 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
-import AtelierCard from '../components/AtelierCard.astro';
 
-const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
+const creations = (await getCollection('creations', ({ data }) => data.disponible))
   .sort((a, b) => a.data.ordre - b.data.ordre)
   .slice(0, 3);
+
+const offres = [
+  {
+    emoji: '✂️',
+    titre: 'Ateliers de couture',
+    texte: "Séances en petit groupe, tous niveaux, pour apprendre à coudre en s'amusant. Machines et matériel fournis.",
+    lien: '/ateliers',
+    cta: 'Voir les ateliers',
+  },
+  {
+    emoji: '👗',
+    titre: 'Cours particuliers',
+    texte: "Un projet précis, un rythme sur mesure. Séances individuelles adaptées à votre niveau et à votre envie.",
+    lien: '/contact',
+    cta: 'Demander un devis',
+  },
+  {
+    emoji: '🧵',
+    titre: 'Retouches & réparations',
+    texte: "Ourlets, reprises, ajustements, transformations. Redonnez vie à vos vêtements préférés.",
+    lien: '/retouches',
+    cta: 'Voir les tarifs',
+  },
+  {
+    emoji: '🎀',
+    titre: 'Créations sur mesure',
+    texte: "Une pièce unique, pensée et cousue pour vous — vêtement, accessoire ou cadeau.",
+    lien: '/contact',
+    cta: 'Parler du projet',
+  },
+];
+
+const arguments_ = [
+  { emoji: '🎓', titre: 'Couturière diplômée', texte: "Formation professionnelle et années de pratique pour un travail soigné." },
+  { emoji: '👥', titre: 'Petits groupes', texte: "Maximum 6 personnes par atelier pour un vrai accompagnement personnalisé." },
+  { emoji: '🧰', titre: 'Matériel fourni', texte: "Machines à coudre, tissus, mercerie : venez les mains dans les poches." },
+  { emoji: '☕', titre: 'Ambiance conviviale', texte: "On coud, on apprend, on discute, on prend un thé. Chez soi, mais mieux." },
+  { emoji: '📍', titre: 'À Hasparren', texte: "Au cœur du Pays Basque, dans un espace lumineux facilement accessible." },
+  { emoji: '💛', titre: 'Passion transmise', texte: "L'envie de partager une pratique manuelle qui fait du bien et dure dans le temps." },
+];
+
+const temoignages = [
+  { auteur: 'Prénom N.', note: 5, texte: "[Colle ici ton témoignage Google — 2 à 4 phrases suffisent]" },
+  { auteur: 'Prénom N.', note: 5, texte: "[Colle ici ton témoignage Google]" },
+  { auteur: 'Prénom N.', note: 5, texte: "[Colle ici ton témoignage Google]" },
+];
+
+const faq = [
+  {
+    q: "Je n'ai jamais cousu, puis-je participer à un atelier ?",
+    r: "Bien sûr ! Les ateliers d'initiation sont spécialement conçus pour les débutant·es. Aucune expérience n'est requise, tout le matériel est fourni et l'ambiance est bienveillante.",
+  },
+  {
+    q: "Faut-il apporter sa propre machine à coudre ?",
+    r: "Non, les machines sont à disposition dans l'atelier. Si vous préférez travailler sur la vôtre pour vous familiariser, vous pouvez tout à fait l'apporter.",
+  },
+  {
+    q: "Combien de temps dure un atelier ?",
+    r: "La durée varie selon le type d'atelier — généralement entre 2 et 4 heures. La durée exacte est indiquée sur la page de chaque atelier.",
+  },
+  {
+    q: "Comment se déroule une retouche ?",
+    r: "Vous passez à l'atelier avec votre vêtement, nous en discutons ensemble, je vous fais un devis clair et un délai. La plupart des retouches simples sont prêtes sous 3 à 7 jours.",
+  },
+  {
+    q: "Proposez-vous des chèques cadeaux ?",
+    r: "Oui, les ateliers et les créations peuvent être offerts. Contactez-moi pour un chèque cadeau personnalisé — parfait pour un anniversaire, la fête des mères ou Noël.",
+  },
+  {
+    q: "Où se situe l'atelier ?",
+    r: "L'atelier se trouve à Hasparren, au cœur du Pays Basque. L'adresse précise est communiquée lors de la réservation. Parking facile à proximité.",
+  },
+];
 ---
 
-<BaseLayout title="Accueil">
+<BaseLayout
+  title="Accueil"
+  description="Atelier Bidaia Alaia à Hasparren — Ateliers de couture, cours particuliers, retouches et créations sur mesure au Pays Basque. Couturière diplômée."
+>
+  <!-- HERO -->
   <section class="hero">
     <div class="container container--narrow" style="text-align: center;">
       <img src="/logo.png" alt="Atelier Bidaia Alaia" class="hero__logo" width="200" height="180" />
-      <h1>Atelier Bidaia Alaia</h1>
-      <p class="hero__tagline">Couturière diplômée</p>
+      <p class="hero__eyebrow">Couturière diplômée · Hasparren, Pays Basque</p>
+      <h1>Ateliers de couture &amp; services de réparation au Pays Basque, à Hasparren</h1>
       <p class="hero__lede">
-        Cours de couture, créations sur mesure et pièces uniques,
-        au cœur du Pays Basque.
+        Apprenez à coudre, faites retoucher vos vêtements ou offrez-vous une pièce unique —
+        dans un atelier chaleureux, en plein cœur du Pays Basque.
       </p>
       <div class="hero__cta">
         <a href="/ateliers" class="btn">Découvrir les ateliers</a>
-        <a href="/boutique" class="btn btn--ghost">Voir la boutique</a>
+        <a href="/retouches" class="btn btn--ghost">Services de retouches</a>
       </div>
     </div>
   </section>
 
+  <!-- OFFRES -->
   <section class="section">
     <div class="container">
-      <h2 style="text-align: center; margin-bottom: var(--space-lg);">Prochains ateliers</h2>
-      {ateliers.length > 0 ? (
+      <header class="section-head">
+        <p class="eyebrow">Nos offres</p>
+        <h2>Ce que propose l'atelier</h2>
+      </header>
+      <div class="grid grid--4">
+        {offres.map((o) => (
+          <article class="offre">
+            <div class="offre__icon" aria-hidden="true">{o.emoji}</div>
+            <h3>{o.titre}</h3>
+            <p>{o.texte}</p>
+            <a href={o.lien} class="offre__link">{o.cta} →</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- POURQUOI NOUS CHOISIR -->
+  <section class="section section--soft">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Pourquoi l'atelier</p>
+        <h2>Ce qui fait la différence</h2>
+      </header>
+      <div class="grid grid--3">
+        {arguments_.map((a) => (
+          <div class="argument">
+            <span class="argument__emoji" aria-hidden="true">{a.emoji}</span>
+            <h3>{a.titre}</h3>
+            <p>{a.texte}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CRÉATIONS -->
+  <section class="section">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">La boutique</p>
+        <h2>Créations de l'atelier</h2>
+        <p class="section-lede">Des pièces uniques, cousues main, disponibles en quantité limitée.</p>
+      </header>
+      {creations.length > 0 ? (
         <div class="grid">
-          {ateliers.map((atelier) => <AtelierCard atelier={atelier} />)}
+          {creations.map((c) => (
+            <article class="card">
+              <div class="card__body">
+                <h3 class="card__title">{c.data.titre}</h3>
+                <p class="card__meta">{c.data.categorie}</p>
+                <p>{c.data.description}</p>
+                <p class="card__price">{c.data.prix} €</p>
+                {c.data.stripeLink ? (
+                  <a href={c.data.stripeLink} class="btn" target="_blank" rel="noopener" style="margin-top: var(--space-sm);">Acheter</a>
+                ) : (
+                  <a href="/contact" class="btn btn--ghost" style="margin-top: var(--space-sm);">Nous contacter</a>
+                )}
+              </div>
+            </article>
+          ))}
         </div>
       ) : (
         <p style="text-align: center; color: var(--color-text-muted);">
-          Les prochains ateliers seront bientôt annoncés — <a href="/contact">contactez-nous</a> pour être prévenu·e.
+          De nouvelles créations arrivent bientôt — <a href="/contact">restez en contact</a> !
         </p>
       )}
       <div style="text-align: center; margin-top: var(--space-lg);">
-        <a href="/ateliers" class="btn btn--ghost">Tous les ateliers</a>
+        <a href="/boutique" class="btn btn--ghost">Voir toute la boutique</a>
       </div>
     </div>
   </section>
 
+  <!-- TÉMOIGNAGES -->
   <section class="section section--soft">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Ils en parlent</p>
+        <h2>Ce que disent les client·es</h2>
+        <p class="section-lede">Avis authentiques laissés sur Google.</p>
+      </header>
+      <div class="grid grid--3">
+        {temoignages.map((t) => (
+          <blockquote class="temoignage">
+            <div class="temoignage__stars" aria-label={`${t.note} étoiles sur 5`}>
+              {'★'.repeat(t.note)}<span class="temoignage__stars--empty">{'★'.repeat(5 - t.note)}</span>
+            </div>
+            <p class="temoignage__texte">« {t.texte} »</p>
+            <footer class="temoignage__auteur">— {t.auteur}</footer>
+          </blockquote>
+        ))}
+      </div>
+      <div style="text-align: center; margin-top: var(--space-lg);">
+        <a href="https://www.google.com/search?q=atelier+bidaia+alaia+hasparren" target="_blank" rel="noopener" class="btn btn--ghost">
+          Voir tous les avis Google
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container container--narrow">
+      <header class="section-head">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2>Vous vous demandez peut-être…</h2>
+      </header>
+      <div class="faq">
+        {faq.map((item) => (
+          <details class="faq__item">
+            <summary class="faq__question">{item.q}</summary>
+            <div class="faq__reponse"><p>{item.r}</p></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section cta-final">
     <div class="container container--narrow" style="text-align: center;">
-      <h2>L'atelier</h2>
-      <p>
-        Dans un espace lumineux à Hasparren, Atelier Bidaia Alaia propose des cours
-        de couture pour tous les niveaux, des créations sur mesure et une
-        petite boutique de pièces confectionnées avec soin.
+      <h2>Une question, un projet, une envie ?</h2>
+      <p class="hero__lede">
+        Contactez l'atelier — je vous réponds sous 48h et on trouve la solution qui vous convient.
       </p>
-      <p>
-        Que vous souhaitiez apprendre à coudre votre premier vêtement,
-        transformer une pièce qui dort dans votre placard, ou offrir
-        une création unique, il y a une place pour vous.
-      </p>
-      <a href="/a-propos" class="btn btn--ghost" style="margin-top: var(--space-sm);">
-        En savoir plus
-      </a>
+      <a href="/contact" class="btn">Prendre contact</a>
     </div>
   </section>
 </BaseLayout>
 
 <style>
+  /* HERO */
   .hero {
     padding: var(--space-xl) 0 var(--space-2xl);
     background: linear-gradient(180deg, var(--color-primary-soft) 0%, var(--color-bg) 100%);
   }
-  .hero__logo {
-    max-width: 200px;
-    height: auto;
-    margin: 0 auto var(--space-sm);
-  }
-  .hero__tagline {
+  .hero__logo { max-width: 200px; height: auto; margin: 0 auto var(--space-sm); }
+  .hero__eyebrow {
     font-family: var(--font-display);
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: var(--color-accent-hover);
-    font-weight: 600;
-    margin-bottom: var(--space-md);
-    letter-spacing: 0.05em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-sm);
   }
   .hero__lede {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: var(--color-text-muted);
-    margin: 0 auto var(--space-lg);
-    max-width: 540px;
+    margin: var(--space-md) auto var(--space-lg);
+    max-width: 620px;
   }
-  .hero__cta {
+  .hero__cta { display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap; }
+
+  /* HEAD DE SECTION */
+  .section-head { text-align: center; margin-bottom: var(--space-lg); }
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--color-secondary-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-xs);
+  }
+  .section-lede {
+    color: var(--color-text-muted);
+    max-width: 520px;
+    margin: var(--space-sm) auto 0;
+  }
+  .section--soft { background: var(--color-primary-soft); }
+
+  /* GRILLES SUR MESURE */
+  .grid--3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .grid--4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+  /* OFFRES */
+  .offre {
+    background: var(--color-surface);
+    padding: var(--space-lg) var(--space-md);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 1px solid var(--color-border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
-    gap: var(--space-sm);
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.5rem;
   }
-  .section--soft {
-    background: var(--color-primary-soft);
+  .offre:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .offre__icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-xs);
+    line-height: 1;
   }
+  .offre h3 {
+    font-size: 1.15rem;
+    margin-bottom: var(--space-xs);
+  }
+  .offre p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    flex: 1;
+    margin-bottom: var(--space-sm);
+  }
+  .offre__link {
+    font-weight: 700;
+    color: var(--color-accent-hover);
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+  }
+
+  /* ARGUMENTS */
+  .argument {
+    text-align: center;
+    padding: var(--space-md);
+  }
+  .argument__emoji { font-size: 2.5rem; display: block; margin-bottom: var(--space-sm); }
+  .argument h3 { font-size: 1.15rem; margin-bottom: var(--space-xs); }
+  .argument p { color: var(--color-text-muted); font-size: 0.95rem; }
+
+  /* TÉMOIGNAGES */
+  .temoignage {
+    background: var(--color-surface);
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    margin: 0;
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+  }
+  .temoignage__stars {
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.1em;
+  }
+  .temoignage__stars--empty { color: var(--color-border); }
+  .temoignage__texte {
+    color: var(--color-text);
+    font-style: italic;
+    flex: 1;
+    margin-bottom: var(--space-sm);
+  }
+  .temoignage__auteur {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  /* FAQ */
+  .faq { display: flex; flex-direction: column; gap: var(--space-xs); }
+  .faq__item {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 0;
+    overflow: hidden;
+  }
+  .faq__question {
+    padding: var(--space-md);
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--color-primary);
+    list-style: none;
+    position: relative;
+    padding-right: 3rem;
+  }
+  .faq__question::-webkit-details-marker { display: none; }
+  .faq__question::after {
+    content: '+';
+    position: absolute;
+    right: var(--space-md);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: var(--color-accent-hover);
+    font-weight: 400;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+  .faq__item[open] .faq__question::after { transform: translateY(-50%) rotate(45deg); }
+  .faq__reponse {
+    padding: 0 var(--space-md) var(--space-md);
+    color: var(--color-text-muted);
+  }
+  .faq__reponse p { margin: 0; }
+
+  /* CTA final */
+  .cta-final {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+    color: #fff;
+  }
+  .cta-final h2, .cta-final .hero__lede { color: #fff; }
+  .cta-final .hero__lede { color: rgba(255,255,255,0.9); }
 </style>
