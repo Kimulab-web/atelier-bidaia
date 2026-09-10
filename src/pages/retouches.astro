@@ -1,6 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const galerie = [
+  {
+    titre: "Réparation d'un chino déchiré",
+    description: "Reprise discrète et solide sur une déchirure au niveau de la poche arrière.",
+    image: "/images/retouche-chino.jpg",
+    seul: true,
+  },
+  {
+    titre: "Rehaussement de taille sur pantalon",
+    description: "Modification de la taille et ajout de boutons décoratifs sur un pantalon en satin rouge.",
+    avant: "/images/retouche-pantalon-rouge-avant.jpg",
+    apres: "/images/retouche-pantalon-rouge-apres.jpg",
+  },
+  {
+    titre: "Restauration d'une broderie ancienne",
+    description: "Reprise minutieuse d'une pièce brodée abîmée — le motif est reconstitué à l'identique.",
+    avant: "/images/retouche-broderie-avant.jpg",
+    apres: "/images/retouche-broderie-apres.jpg",
+  },
+];
+
 const categories = [
   {
     titre: "Pantalons, bermudas, shorts",
@@ -63,10 +84,41 @@ const etapes = [
         Ourlets, reprises, ajustements, transformations : redonnez vie à vos vêtements
         préférés plutôt que de les remplacer. Travail soigné, tarifs justes, délais rapides.
       </p>
-      <figure class="avant-apres">
-        <img src="/images/retouche-chino.jpg" alt="Réparation d'une déchirure sur un chino gris — avant et après" loading="lazy" />
-        <figcaption>Un chino déchiré au niveau de la poche, réparé de manière discrète et solide.</figcaption>
-      </figure>
+    </div>
+  </section>
+
+  <!-- GALERIE AVANT/APRÈS -->
+  <section class="section">
+    <div class="container">
+      <header class="galerie-head">
+        <p class="eyebrow">Quelques exemples</p>
+        <h2>Avant / après</h2>
+        <p class="galerie-lede">Un aperçu du travail réalisé à l'atelier — de la simple réparation à la restauration délicate.</p>
+      </header>
+      <div class="galerie-grid">
+        {galerie.map((g) => (
+          <article class="galerie-item">
+            <h3>{g.titre}</h3>
+            {g.seul ? (
+              <div class="galerie-image galerie-image--single">
+                <img src={g.image} alt={g.titre} loading="lazy" />
+              </div>
+            ) : (
+              <div class="galerie-image galerie-image--paire">
+                <figure>
+                  <img src={g.avant} alt={`${g.titre} — avant`} loading="lazy" />
+                  <figcaption>Avant</figcaption>
+                </figure>
+                <figure>
+                  <img src={g.apres} alt={`${g.titre} — après`} loading="lazy" />
+                  <figcaption>Après</figcaption>
+                </figure>
+              </div>
+            )}
+            <p class="galerie-desc">{g.description}</p>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -143,22 +195,67 @@ const etapes = [
   }
   .section--soft { background: var(--color-primary-soft); }
 
-  .avant-apres {
-    margin: var(--space-xl) 0 0;
+  /* GALERIE AVANT/APRÈS */
+  .galerie-head { text-align: center; margin-bottom: var(--space-lg); }
+  .galerie-lede { color: var(--color-text-muted); max-width: 520px; margin: var(--space-sm) auto 0; }
+  .galerie-grid {
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 900px) {
+    .galerie-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .galerie-item {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+  }
+  .galerie-item h3 {
+    font-size: 1.05rem;
+    margin-bottom: var(--space-sm);
+  }
+  .galerie-image {
+    margin-bottom: var(--space-sm);
+  }
+  .galerie-image--single img {
+    width: 100%;
+    border-radius: var(--radius);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  .galerie-image--paire {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .galerie-image--paire figure {
+    margin: 0;
     text-align: center;
   }
-  .avant-apres img {
+  .galerie-image--paire img {
     width: 100%;
-    max-width: 600px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    margin: 0 auto;
+    border-radius: var(--radius);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
   }
-  .avant-apres figcaption {
+  .galerie-image--paire figcaption {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-top: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .galerie-desc {
     font-size: 0.9rem;
     color: var(--color-text-muted);
-    font-style: italic;
-    margin-top: var(--space-sm);
+    margin: 0;
+    line-height: 1.5;
   }
 
   .etapes {
