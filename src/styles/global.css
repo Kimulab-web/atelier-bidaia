@@ -1,0 +1,149 @@
+/* ============================================
+   Atelier Bidaia — feuille de style globale
+   Palette et typographie à remplacer par
+   l'identité visuelle du client.
+   ============================================ */
+
+:root {
+  /* Palette — placeholder, à remplacer par les couleurs de la charte */
+  --color-bg: #faf7f2;
+  --color-surface: #ffffff;
+  --color-text: #2b2620;
+  --color-text-muted: #6b6258;
+  --color-accent: #b8654a; /* terracotta doux — à ajuster */
+  --color-accent-hover: #9a5139;
+  --color-border: #e8e0d4;
+
+  /* Typographie */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+
+  /* Espaces */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  /* Layout */
+  --container-max: 1200px;
+  --container-narrow: 720px;
+  --radius: 4px;
+  --shadow-sm: 0 1px 3px rgba(43, 38, 32, 0.06);
+  --shadow-md: 0 4px 12px rgba(43, 38, 32, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+h3 { font-size: 1.5rem; }
+
+p { margin-bottom: var(--space-sm); }
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover { color: var(--color-accent-hover); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section {
+  padding: var(--space-2xl) 0;
+}
+
+/* Bouton */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+.btn:hover { background: var(--color-accent-hover); color: #fff; }
+.btn:active { transform: translateY(1px); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+}
+.btn--ghost:hover { background: var(--color-accent); color: #fff; }
+
+/* Grille cartes */
+.grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* Card */
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+.card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.card__body { padding: var(--space-md); flex: 1; display: flex; flex-direction: column; }
+.card__title { margin-bottom: var(--space-xs); }
+.card__meta {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+.card__price {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-accent);
+  margin-top: auto;
+}

@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import AtelierCard from '../components/AtelierCard.astro';
+
+const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
+  .sort((a, b) => a.data.ordre - b.data.ordre)
+  .slice(0, 3);
+---
+
+<BaseLayout title="Accueil">
+  <section class="hero">
+    <div class="container container--narrow" style="text-align: center;">
+      <h1>Atelier Bidaia</h1>
+      <p class="hero__lede">
+        Cours de couture, créations sur mesure et pièces uniques,
+        au cœur du Pays Basque.
+      </p>
+      <div class="hero__cta">
+        <a href="/ateliers" class="btn">Découvrir les ateliers</a>
+        <a href="/boutique" class="btn btn--ghost">Voir la boutique</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: var(--space-lg);">Prochains ateliers</h2>
+      {ateliers.length > 0 ? (
+        <div class="grid">
+          {ateliers.map((atelier) => <AtelierCard atelier={atelier} />)}
+        </div>
+      ) : (
+        <p style="text-align: center; color: var(--color-text-muted);">
+          Les prochains ateliers seront bientôt annoncés — <a href="/contact">contactez-nous</a> pour être prévenu·e.
+        </p>
+      )}
+      <div style="text-align: center; margin-top: var(--space-lg);">
+        <a href="/ateliers" class="btn btn--ghost">Tous les ateliers</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-surface);">
+    <div class="container container--narrow" style="text-align: center;">
+      <h2>L'atelier</h2>
+      <p>
+        Dans un espace lumineux à Hasparren, Atelier Bidaia propose des cours
+        de couture pour tous les niveaux, des créations sur mesure et une
+        petite boutique de pièces confectionnées avec soin.
+      </p>
+      <p>
+        Que vous souhaitiez apprendre à coudre votre premier vêtement,
+        transformer une pièce qui dort dans votre placard, ou offrir
+        une création unique, il y a une place pour vous.
+      </p>
+      <a href="/a-propos" class="btn btn--ghost" style="margin-top: var(--space-sm);">
+        En savoir plus
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: var(--space-2xl) 0;
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-surface) 100%);
+  }
+  .hero__lede {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    margin: var(--space-md) 0 var(--space-lg);
+  }
+  .hero__cta {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>

@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const creations = (await getCollection('creations', ({ data }) => data.disponible))
+  .sort((a, b) => a.data.ordre - b.data.ordre);
+---
+
+<BaseLayout title="Boutique" description="Pièces uniques cousues à la main par Atelier Bidaia — vêtements, accessoires, décoration.">
+  <section class="section">
+    <div class="container">
+      <header style="text-align: center; margin-bottom: var(--space-xl);">
+        <h1>Boutique</h1>
+        <p style="color: var(--color-text-muted); max-width: 600px; margin: var(--space-sm) auto 0;">
+          Pièces uniques cousues main dans l'atelier. Chaque création est disponible en quantité limitée.
+        </p>
+      </header>
+
+      {creations.length > 0 ? (
+        <div class="grid">
+          {creations.map((c) => (
+            <article class="card">
+              <div class="card__body">
+                <h3 class="card__title">{c.data.titre}</h3>
+                <p class="card__meta">{c.data.categorie}</p>
+                <p>{c.data.description}</p>
+                <p class="card__price">{c.data.prix} €</p>
+                {c.data.stripeLink ? (
+                  <a href={c.data.stripeLink} class="btn" target="_blank" rel="noopener" style="margin-top: var(--space-sm);">
+                    Acheter
+                  </a>
+                ) : (
+                  <a href="/contact" class="btn btn--ghost" style="margin-top: var(--space-sm);">
+                    Nous contacter
+                  </a>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <p style="text-align: center; color: var(--color-text-muted);">
+          La boutique se remplit — revenez bientôt !
+        </p>
+      )}
+    </div>
+  </section>
+</BaseLayout>

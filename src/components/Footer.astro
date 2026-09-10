@@ -1,0 +1,55 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-brand">Atelier Bidaia</p>
+      <p class="footer-tagline">Cours et créations couture au Pays Basque</p>
+    </div>
+    <div>
+      <p><strong>Contact</strong></p>
+      <p>Hasparren, Pays Basque</p>
+      <p><a href="mailto:contact@atelier-bidaia.fr">contact@atelier-bidaia.fr</a></p>
+    </div>
+    <div>
+      <p><strong>Suivez-nous</strong></p>
+      <p><a href="https://instagram.com/atelier.bidaia" target="_blank" rel="noopener">Instagram</a></p>
+      <p><a href="https://facebook.com/atelier.bidaia" target="_blank" rel="noopener">Facebook</a></p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© {year} Atelier Bidaia. Tous droits réservés. — <a href="/mentions-legales">Mentions légales</a></p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-text);
+    color: var(--color-bg);
+    margin-top: var(--space-2xl);
+    padding: var(--space-xl) 0 var(--space-md);
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+  }
+  .footer-brand {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-xs);
+  }
+  .footer-tagline { color: rgba(250, 247, 242, 0.7); font-size: 0.9rem; }
+  .site-footer a { color: var(--color-bg); }
+  .site-footer a:hover { color: var(--color-accent); }
+  .footer-bottom {
+    border-top: 1px solid rgba(250, 247, 242, 0.15);
+    padding-top: var(--space-md);
+    font-size: 0.85rem;
+    color: rgba(250, 247, 242, 0.6);
+    text-align: center;
+  }
+</style>

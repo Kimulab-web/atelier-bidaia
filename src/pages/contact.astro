@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact" description="Contactez Atelier Bidaia pour un cours, une création sur mesure ou toute question.">
+  <section class="section">
+    <div class="container container--narrow">
+      <h1>Contact</h1>
+      <p class="lede">
+        Une question, un projet sur mesure, envie de réserver un atelier ?
+        Écrivez-nous, réponse sous 48h.
+      </p>
+
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/REMPLACER_PAR_ID"
+        method="POST"
+      >
+        <label>
+          <span>Nom</span>
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          <span>E-mail</span>
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          <span>Sujet</span>
+          <select name="sujet">
+            <option>Question sur un atelier</option>
+            <option>Création sur mesure</option>
+            <option>Retouches</option>
+            <option>Autre</option>
+          </select>
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="6" required></textarea>
+        </label>
+        <button type="submit" class="btn">Envoyer</button>
+      </form>
+
+      <div class="contact-alt">
+        <p><strong>Ou directement :</strong></p>
+        <p>📧 <a href="mailto:contact@atelier-bidaia.fr">contact@atelier-bidaia.fr</a></p>
+        <p>📍 Hasparren, Pays Basque</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lede {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    background: var(--color-surface);
+    padding: var(--space-lg);
+    border-radius: var(--radius);
+  }
+  .contact-form label {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 1rem;
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus,
+  .contact-form select:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 1px;
+  }
+  .contact-form button {
+    align-self: flex-start;
+  }
+  .contact-alt {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+  }
+</style>

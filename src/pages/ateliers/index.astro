@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import AtelierCard from '../../components/AtelierCard.astro';
+
+const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
+  .sort((a, b) => a.data.ordre - b.data.ordre);
+---
+
+<BaseLayout title="Ateliers de couture" description="Découvrez les ateliers de couture proposés par Atelier Bidaia : débutant, intermédiaire, sur mesure.">
+  <section class="section">
+    <div class="container">
+      <header style="text-align: center; margin-bottom: var(--space-xl);">
+        <h1>Ateliers de couture</h1>
+        <p style="color: var(--color-text-muted); max-width: 600px; margin: var(--space-sm) auto 0;">
+          Des séances en petit groupe pour apprendre, progresser, ou juste passer
+          un bon moment autour d'une machine à coudre.
+        </p>
+      </header>
+
+      {ateliers.length > 0 ? (
+        <div class="grid">
+          {ateliers.map((atelier) => <AtelierCard atelier={atelier} />)}
+        </div>
+      ) : (
+        <p style="text-align: center; color: var(--color-text-muted);">
+          Aucun atelier programmé pour le moment.
+          <a href="/contact">Contactez-nous</a> pour être informé·e des prochaines dates.
+        </p>
+      )}
+    </div>
+  </section>
+</BaseLayout>

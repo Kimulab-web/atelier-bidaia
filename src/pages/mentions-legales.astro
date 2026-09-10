@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Mentions légales">
+  <section class="section">
+    <div class="container container--narrow">
+      <h1>Mentions légales</h1>
+
+      <h2>Éditeur du site</h2>
+      <p>
+        Atelier Bidaia<br />
+        [Statut juridique] — [SIRET]<br />
+        [Adresse complète]<br />
+        [Téléphone] — <a href="mailto:contact@atelier-bidaia.fr">contact@atelier-bidaia.fr</a>
+      </p>
+      <p>Directeur·rice de la publication : [Nom]</p>
+
+      <h2>Hébergement</h2>
+      <p>[Nom de l'hébergeur — Netlify / Vercel / OVH…]<br />[Adresse de l'hébergeur]</p>
+
+      <h2>Développement</h2>
+      <p>Site conçu et développé par <a href="https://kimulab.fr" target="_blank" rel="noopener">Kimulab</a>, agence digitale au Pays Basque.</p>
+
+      <h2>Propriété intellectuelle</h2>
+      <p>L'ensemble du contenu du site (textes, images, créations) est protégé par le droit d'auteur. Toute reproduction, même partielle, est interdite sans autorisation écrite préalable.</p>
+
+      <h2>Données personnelles</h2>
+      <p>Les données collectées via le formulaire de contact sont utilisées uniquement pour répondre à votre demande et ne sont ni vendues, ni transmises à des tiers. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression : écrivez à contact@atelier-bidaia.fr.</p>
+
+      <h2>Cookies</h2>
+      <p>Ce site n'utilise pas de cookies de suivi ou de mesure d'audience.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  h2 { margin-top: var(--space-lg); margin-bottom: var(--space-sm); }
+</style>
