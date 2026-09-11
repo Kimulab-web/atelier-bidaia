@@ -16,7 +16,7 @@ const galerie = [
   },
   {
     titre: "Restauration d'une broderie ancienne",
-    description: "Reprise minutieuse d'une pièce brodée abîmée — le motif est reconstitué à l'identique.",
+    description: "Reprise minutieuse d'une pièce brodée abîmée, le motif est reconstitué à l'identique.",
     avant: "/images/retouche-broderie-avant.jpg",
     apres: "/images/retouche-broderie-apres.jpg",
   },
@@ -74,7 +74,7 @@ const etapes = [
 
 <BaseLayout
   title="Retouches couture au Pays Basque"
-  description="Retouches, réparations et transformations de vêtements au Pays Basque, à Hasparren. Ourlets, reprises, ajustements — couturière diplômée, tarifs justes."
+  description="Retouches, réparations et transformations de vêtements au Pays Basque, à Hasparren. Ourlets, reprises, ajustements, couturière diplômée, tarifs justes."
 >
   <section class="section">
     <div class="container container--narrow">
@@ -93,7 +93,7 @@ const etapes = [
       <header class="galerie-head">
         <p class="eyebrow">Quelques exemples</p>
         <h2>Avant / après</h2>
-        <p class="galerie-lede">Un aperçu du travail réalisé à l'atelier — de la simple réparation à la restauration délicate.</p>
+        <p class="galerie-lede">Un aperçu du travail réalisé à l'atelier, de la simple réparation à la restauration délicate.</p>
       </header>
       <div class="galerie-grid">
         {galerie.map((g) => (
@@ -106,11 +106,11 @@ const etapes = [
             ) : (
               <div class="galerie-image galerie-image--paire">
                 <figure>
-                  <img src={g.avant} alt={`${g.titre} — avant`} loading="lazy" />
+                  <img src={g.avant} alt={`${g.titre}, avant`} loading="lazy" />
                   <figcaption>Avant</figcaption>
                 </figure>
                 <figure>
-                  <img src={g.apres} alt={`${g.titre} — après`} loading="lazy" />
+                  <img src={g.apres} alt={`${g.titre}, après`} loading="lazy" />
                   <figcaption>Après</figcaption>
                 </figure>
               </div>
@@ -162,7 +162,7 @@ const etapes = [
       ))}
 
       <p class="tarifs-footer">
-        Un doute sur une réparation ? Passez à l'atelier ou envoyez-moi une photo par message —
+        Un doute sur une réparation ? Passez à l'atelier ou envoyez-moi une photo par message
         je vous dis tout de suite si c'est faisable et à quel prix.
       </p>
     </div>

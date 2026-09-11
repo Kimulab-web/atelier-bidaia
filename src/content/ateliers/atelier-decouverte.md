@@ -1,5 +1,5 @@
 ---
-titre: Atelier découverte couture
+titre: Atelier découverte
 description: Une séance de 2 heures pour apprivoiser la machine à coudre et repartir avec 1 ou 2 lingettes démaquillantes cousues main.
 duree: 2 heures · 1 séance
 niveau: débutant
@@ -29,4 +29,4 @@ Cet atelier est fait pour vous si vous n'avez jamais touché une machine à coud
 
 ## Petits groupes
 
-Les ateliers se déroulent avec **3 personnes maximum** — presque du sur-mesure, avec un accompagnement individualisé.
+Les ateliers se déroulent avec **3 personnes maximum**, presque du sur-mesure, avec un accompagnement individualisé.

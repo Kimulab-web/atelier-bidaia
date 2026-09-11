@@ -1,6 +1,6 @@
 ---
 titre: Pack perfectionnement
-description: "8 séances pour maîtriser la machine, la préparation à la coupe et l'utilisation d'un patron d'accessoire ou de vêtement simple. Personnes plus avancées : je vous accompagne sur tout projet couture."
+description: "8 séances pour apprendre à utiliser la machine à coudre mais aussi comprendre et appliquer toute la technique de préparation à la coupe et apprendre à utiliser un patron d'accessoire ou de vêtement simple que vous réalisez. Pour les personnes plus avancées, je vous accompagne dans la réalisation de tout projet couture."
 duree: 8 séances de 2 heures
 niveau: tous niveaux
 prix: 240
@@ -19,7 +19,7 @@ Pour les personnes plus avancées, je vous accompagne dans la réalisation de to
 
 ## Petits groupes
 
-Les ateliers se déroulent avec **3 personnes maximum** — presque du sur-mesure, avec un accompagnement individualisé.
+Les ateliers se déroulent avec **3 personnes maximum**, presque du sur-mesure, avec un accompagnement individualisé.
 
 ## Ce qui est inclus
 

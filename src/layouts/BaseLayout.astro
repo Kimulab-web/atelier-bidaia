@@ -11,7 +11,7 @@ interface Props {
 
 const {
   title,
-  description = "Atelier de couture au Pays Basque — Cours, ateliers, retouches et créations sur mesure par une couturière diplômée à Hasparren.",
+  description = "Atelier de couture au Pays Basque, Cours, ateliers, retouches et créations sur mesure par une couturière diplômée à Hasparren.",
   image = '/logo.png',
 } = Astro.props;
 
@@ -27,13 +27,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
 
-    <title>{title} — Atelier Bidaia Alaia</title>
+    <title>{title} | Atelier Bidaia Alaia</title>
     <meta name="description" content={description} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={`${title} — Atelier Bidaia Alaia`} />
+    <meta property="og:title" content={`${title} | Atelier Bidaia Alaia`} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.url)} />
     <meta property="og:locale" content="fr_FR" />

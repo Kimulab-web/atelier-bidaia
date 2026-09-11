@@ -1,5 +1,5 @@
 ---
-titre: Pack découverte couture
+titre: Pack découverte
 description: 4 séances pour apprendre à utiliser une machine à coudre (installation, réglages, prises de repères) et réaliser de 1 à 2 créations simples choisies ensemble.
 duree: 4 séances de 2 heures
 niveau: débutant
@@ -24,7 +24,7 @@ Lors de la première séance, vous choisissez les 2 projets que vous souhaitez a
 
 ## Petits groupes
 
-Les ateliers se déroulent avec **3 personnes maximum** — presque du sur-mesure, avec un accompagnement individualisé.
+Les ateliers se déroulent avec **3 personnes maximum**, presque du sur-mesure, avec un accompagnement individualisé.
 
 ## Ce qui est inclus
 

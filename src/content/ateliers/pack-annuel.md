@@ -1,6 +1,6 @@
 ---
 titre: Pack annuel
-description: 32 séances tout au long de l'année pour progresser à votre rythme, quel que soit votre niveau — utilisation de la machine, préparation de l'ouvrage, projets de plus en plus élaborés. Je vous guide pas à pas.
+description: "32 séances tout au long de l'année pour vous permettre quelques soit votre niveau de progresser que ce soit en terme d'utilisation de la machine, de préparation de l'ouvrage, de réalisation de projets de plus en plus élaborés. Je vous guide pas à pas."
 duree: 32 séances de 2 heures
 niveau: tous niveaux
 prix: 840
@@ -23,11 +23,11 @@ Je vous guide pas à pas, à votre rythme.
 
 ## Petits groupes
 
-Les ateliers se déroulent avec **3 personnes maximum** — presque du sur-mesure, avec un accompagnement individualisé qui fait toute la différence sur la durée.
+Les ateliers se déroulent avec **3 personnes maximum**, presque du sur-mesure, avec un accompagnement individualisé qui fait toute la différence sur la durée.
 
 ## Le tarif
 
-**840 €** pour 32 séances, soit environ **26 €** par séance — le meilleur rapport qualité-prix de nos formules.
+**840 €** pour 32 séances, soit environ **26 €** par séance, le meilleur rapport qualité-prix de nos formules.
 Possibilité de paiement échelonné : parlons-en.
 
 ## Ce qui est inclus

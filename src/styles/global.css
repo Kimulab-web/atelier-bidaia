@@ -1,18 +1,18 @@
 /* ============================================
-   Atelier Bidaia Alaia — feuille de style globale
+   Atelier Bidaia Alaia, feuille de style globale
    Palette extraite du logo (violet / orange doré / menthe)
    ============================================ */
 
 :root {
   /* Palette de la charte */
   --color-primary: #663188;         /* violet du logo */
-  --color-primary-hover: #4E2568;   /* violet foncé — hover */
-  --color-primary-soft: #F2ECF6;    /* violet très pâle — surfaces */
+  --color-primary-hover: #4E2568;   /* violet foncé, hover */
+  --color-primary-soft: #F2ECF6;    /* violet très pâle, surfaces */
 
-  --color-accent: #F8BE55;          /* orange doré du logo — CTA, prix */
+  --color-accent: #F8BE55;          /* orange doré du logo, CTA, prix */
   --color-accent-hover: #E5A733;
 
-  --color-secondary: #97C6AE;       /* menthe du logo — badges, secondaire */
+  --color-secondary: #97C6AE;       /* menthe du logo, badges, secondaire */
   --color-secondary-dark: #6FA98E;
 
   --color-bg: #FDFBF7;              /* fond crème très doux */
@@ -21,7 +21,7 @@
   --color-text-muted: #6B5F7A;
   --color-border: #EDE5F0;
 
-  /* Typographie — Quicksand (arrondi, dans l'esprit du logo) + Nunito (courant) */
+  /* Typographie, Quicksand (arrondi, dans l'esprit du logo) + Nunito (courant) */
   --font-display: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
@@ -99,7 +99,7 @@ img { max-width: 100%; height: auto; display: block; }
   padding: var(--space-2xl) 0;
 }
 
-/* Bouton principal — orange doré chaleureux */
+/* Bouton principal, orange doré chaleureux */
 .btn {
   display: inline-block;
   padding: 0.85rem 1.75rem;
