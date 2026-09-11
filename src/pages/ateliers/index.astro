@@ -152,11 +152,20 @@ const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
     margin: var(--space-sm) auto 0;
   }
 
-  /* Grille : cartes qui s'adaptent — 5 en 1 ligne sur grand écran, 2 sur tablette, 1 sur mobile */
+  /* Grille : 5 cartes en 1 ligne sur desktop, 2 sur tablette, 1 sur mobile */
   .ateliers-grid {
     display: grid;
-    gap: var(--space-md);
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-sm);
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 600px) {
+    .ateliers-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 900px) {
+    .ateliers-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (min-width: 1100px) {
+    .ateliers-grid { grid-template-columns: repeat(5, 1fr); gap: 0.75rem; }
   }
 
   /* Réalisations */
