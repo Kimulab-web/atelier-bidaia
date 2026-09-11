@@ -37,7 +37,6 @@ const formatDate = (d: Date) =>
       </header>
 
       <div class="atelier-body">
-        <p class="lede">{description}</p>
         <Content />
       </div>
 
@@ -111,6 +110,25 @@ const formatDate = (d: Date) =>
     font-size: 1.15rem;
     color: var(--color-text-muted);
     margin-bottom: var(--space-md);
+  }
+  /* Espacements des sections dans le contenu markdown */
+  .atelier-body :global(h2) {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+  .atelier-body :global(h2:first-child) {
+    margin-top: 0;
+  }
+  .atelier-body :global(h3) {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-xs);
+  }
+  .atelier-body :global(ul) {
+    padding-left: 1.25rem;
+    margin-bottom: var(--space-sm);
+  }
+  .atelier-body :global(ul li) {
+    margin-bottom: 0.35rem;
   }
   .atelier-dates {
     background: var(--color-surface);
