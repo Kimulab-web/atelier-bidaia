@@ -15,7 +15,7 @@ const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
     <div class="container">
       <header class="page-head">
         <p class="eyebrow">Ateliers</p>
-        <h1>Ateliers de couture loisir au Pays&nbsp;Basque,<br />à Hasparren</h1>
+        <h1>Ateliers de couture loisir<br />au Pays&nbsp;Basque, à Hasparren</h1>
         <p class="page-lede">
           Des cours de couture en très petit groupe (3 personnes maximum),
           au cœur du Pays Basque, pour apprendre, progresser ou simplement
@@ -57,8 +57,8 @@ const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
       <p>
         Tous les <strong>ateliers de couture</strong> d'Atelier Bidaia Alaia se déroulent à
         Hasparren, dans un espace lumineux et bien équipé de l'Espace Entreprise Aldatu, au
-        cœur du <strong>Pays Basque</strong>. Nous vous accueillons dans un cadre chaleureux
-        et convivial pour partager la passion de la couture.
+        cœur du <strong>Pays Basque</strong>. Je vous accueille dans un cadre chaleureux
+        et convivial pour partager ma passion de la couture.
       </p>
 
       <p>
@@ -70,7 +70,7 @@ const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
 
       <h3>Un accompagnement quasi individuel</h3>
       <p>
-        Nous limitons chaque groupe à <strong>3 personnes maximum</strong>. C'est ce qui fait
+        Je limite chaque groupe à <strong>3 personnes maximum</strong>. C'est ce qui fait
         toute la différence par rapport à d'autres cours de couture : je peux réellement
         m'adapter à votre niveau, à votre projet et à votre rythme. Que vous soyez débutante
         absolue ou déjà à l'aise avec une machine, vous progressez sans être noyée dans un
@@ -152,17 +152,11 @@ const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
     margin: var(--space-sm) auto 0;
   }
 
-  /* Grille : 4 cartes en 1 ligne sur desktop */
+  /* Grille : cartes qui s'adaptent — 5 en 1 ligne sur grand écran, 2 sur tablette, 1 sur mobile */
   .ateliers-grid {
     display: grid;
     gap: var(--space-md);
-    grid-template-columns: 1fr;
-  }
-  @media (min-width: 640px) {
-    .ateliers-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (min-width: 1000px) {
-    .ateliers-grid { grid-template-columns: repeat(4, 1fr); }
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 
   /* Réalisations */

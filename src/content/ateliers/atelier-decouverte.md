@@ -11,15 +11,15 @@ publie: true
 stripeLink: https://buy.stripe.com/REMPLACER_PAR_LE_LIEN
 ---
 
+## Pour qui ?
+
+Cet atelier est fait pour vous si vous n'avez jamais touché à une machine à coudre ou si vous voulez simplement tester avant de vous engager dans un pack plus long.
+
 ## Au programme
 
 - Prise en main de la machine à coudre
 - Apprentissage ludique de l'utilisation de la machine
 - Réalisation guidée d'1 ou 2 lingettes démaquillantes avec lesquelles vous repartez
-
-## Pour qui ?
-
-Cet atelier est fait pour vous si vous n'avez jamais touché une machine à coudre, ou si vous voulez simplement tester avant de vous engager dans un pack plus long.
 
 ## Ce qui est inclus
 
@@ -29,4 +29,4 @@ Cet atelier est fait pour vous si vous n'avez jamais touché une machine à coud
 
 ## Petits groupes
 
-Les ateliers se déroulent avec **3 personnes maximum**, presque du sur-mesure, avec un accompagnement individualisé.
+Les ateliers se déroulent avec 3 personnes maximum, presque du sur-mesure, avec un accompagnement individualisé.

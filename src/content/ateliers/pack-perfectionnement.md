@@ -1,6 +1,6 @@
 ---
 titre: Pack perfectionnement
-description: "8 séances pour apprendre à utiliser la machine à coudre mais aussi comprendre et appliquer toute la technique de préparation à la coupe et apprendre à utiliser un patron d'accessoire ou de vêtement simple que vous réalisez. Pour les personnes plus avancées, je vous accompagne dans la réalisation de tout projet couture."
+description: "8 séances pour apprendre à utiliser la machine à coudre, aussi assimiler toute la technique de préparation à la coupe et apprendre à utiliser un patron d'accessoire ou de vêtement simple que vous réalisez. Pour les personnes plus avancées, je vous accompagne dans la réalisation de tout projet couture."
 duree: 8 séances de 2 heures
 niveau: tous niveaux
 prix: 240
@@ -13,17 +13,28 @@ stripeLink: https://buy.stripe.com/REMPLACER_PAR_LE_LIEN
 
 ## Pour qui ?
 
-Ce pack est fait pour vous si vous voulez vraiment progresser : apprendre à utiliser la machine à coudre, mais aussi comprendre et appliquer toute la technique de préparation à la coupe et apprendre à utiliser un patron d'accessoire ou de vêtement simple que vous réalisez.
+Que vous soyez débutantes ou plus avancées, je vous accompagne selon votre niveau et vos projets.
 
-Pour les personnes plus avancées, je vous accompagne dans la réalisation de tout projet couture.
+## Au programme
 
-## Petits groupes
+**Pour les débutantes :**
 
-Les ateliers se déroulent avec **3 personnes maximum**, presque du sur-mesure, avec un accompagnement individualisé.
+- Apprendre à utiliser la machine à coudre
+- Appréhender toute la technique de préparation à la coupe
+- Apprendre à utiliser un patron d'accessoire ou de vêtement simple
+- Coudre des projets simples
+
+**Pour les plus avancées :**
+
+Réaliser un projet couture en pouvant vous appuyer sur mes compétences techniques.
 
 ## Ce qui est inclus
 
 - L'accès aux machines et aux outils de l'atelier
-- Le tissu et les fournitures sont fournis
+- Le tissu et les fournitures sont fournis, pour les projets débutants
 - L'accompagnement technique sur tous vos projets
 - Une progression sur mesure, adaptée à vos envies
+
+## Petit groupe
+
+Les ateliers se déroulent avec 3 personnes maximum, presque du sur-mesure, avec un accompagnement individualisé.

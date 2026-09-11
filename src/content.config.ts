@@ -9,7 +9,8 @@ const ateliers = defineCollection({
       description: z.string(),
       duree: z.string(), // ex "3 heures"
       niveau: z.enum(['débutant', 'intermédiaire', 'confirmé', 'tous niveaux']),
-      prix: z.number(), // en euros
+      prix: z.number(), // en euros (0 = sur devis)
+      surDevis: z.boolean().default(false),
       places: z.number(), // nombre max de participants
       dates: z.array(z.date()).optional(),
       horaire: z.string().optional(),

@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 
 const { atelier } = Astro.props;
 const { Content } = await render(atelier);
-const { titre, description, duree, niveau, prix, places, dates, horaire, stripeLink } = atelier.data;
+const { titre, description, duree, niveau, prix, surDevis, places, dates, horaire, stripeLink } = atelier.data;
 
 const formatDate = (d: Date) =>
   d.toLocaleDateString('fr-FR', {
@@ -32,7 +32,7 @@ const formatDate = (d: Date) =>
 
       <header class="atelier-header">
         <h1>{titre}</h1>
-        <p class="atelier-meta">{duree} · Niveau {niveau} · {places} places max</p>
+        <p class="atelier-meta">{duree} · Niveau {niveau} · {places === 1 ? '1 personne (individuel)' : `${places} places max`}</p>
         {horaire && <p class="atelier-horaire">🗓️ {horaire}</p>}
       </header>
 
@@ -51,8 +51,17 @@ const formatDate = (d: Date) =>
       )}
 
       <div class="atelier-booking">
-        <p class="atelier-price">{prix} €</p>
-        {stripeLink && !stripeLink.includes('REMPLACER') ? (
+        <p class="atelier-price">{surDevis ? 'Sur devis' : `${prix} €`}</p>
+        {surDevis ? (
+          <>
+            <a href="/contact" class="btn">
+              Demander un devis
+            </a>
+            <p class="booking-note">
+              Contactez-moi pour discuter de votre projet et recevoir un devis personnalisé.
+            </p>
+          </>
+        ) : stripeLink && !stripeLink.includes('REMPLACER') ? (
           <>
             <a href={stripeLink} class="btn" target="_blank" rel="noopener">
               Réserver l'atelier
@@ -67,7 +76,7 @@ const formatDate = (d: Date) =>
               Réserver l'atelier
             </a>
             <p class="booking-note">
-              Nous contacter pour vérifier la disponibilité et réserver votre place.
+              Me contacter pour vérifier la disponibilité et réserver votre place.
             </p>
           </>
         )}
