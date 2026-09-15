@@ -3,16 +3,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const galerie = [
   {
-    titre: "Réparation d'un chino déchiré",
-    description: "Reprise discrète et solide sur une déchirure au niveau de la poche arrière.",
-    image: "/images/retouche-chino.jpg",
-    seul: true,
-  },
-  {
     titre: "Rehaussement de taille sur pantalon",
     description: "Modification de la taille et ajout de boutons décoratifs sur un pantalon en satin rouge.",
     avant: "/images/retouche-pantalon-rouge-avant.jpg",
     apres: "/images/retouche-pantalon-rouge-apres.jpg",
+  },
+  {
+    titre: "Réparation d'un chino déchiré",
+    description: "Reprise discrète et solide sur une déchirure au niveau de la poche arrière.",
+    image: "/images/retouche-chino.jpg",
+    seul: true,
   },
   {
     titre: "Restauration d'une broderie ancienne",
@@ -65,10 +65,26 @@ const categories = [
 ];
 
 const etapes = [
-  { num: "1", titre: "Vous passez à l'atelier", texte: "Sans rendez-vous aux horaires d'ouverture, ou sur rendez-vous par téléphone." },
-  { num: "2", titre: "On regarde ensemble", texte: "Je vous conseille la meilleure solution et vous propose un devis clair, sans surprise." },
-  { num: "3", titre: "Je réalise la retouche", texte: "La plupart des retouches simples sont prêtes en 3 à 7 jours ouvrés." },
-  { num: "4", titre: "Vous récupérez votre vêtement", texte: "Prêt à porter, comme neuf. Paiement à la remise." },
+  {
+    num: "1",
+    titre: "Vous passez à l'atelier sur rendez-vous",
+    texte: "Vous pouvez m'appeler au 06 11 39 36 27.",
+  },
+  {
+    num: "2",
+    titre: "On regarde ensemble",
+    texte: "Je vous conseille la meilleure solution et je vous propose un devis clair.",
+  },
+  {
+    num: "3",
+    titre: "Je réalise la retouche dans le délai annoncé",
+    texte: "Si un contretemps lié notamment à un problème de livraison de matériel survient, je vous en avertis dans les meilleurs délais.",
+  },
+  {
+    num: "4",
+    titre: "Vous récupérez votre vêtement",
+    texte: "Prêt à porter, comme neuf. Paiement à la remise.",
+  },
 ];
 ---
 
@@ -76,24 +92,22 @@ const etapes = [
   title="Retouches couture au Pays Basque"
   description="Retouches, réparations et transformations de vêtements au Pays Basque, à Hasparren. Ourlets, reprises, ajustements, couturière diplômée, tarifs justes."
 >
-  <section class="section">
+  <!-- HERO + GALERIE regroupés pour éviter les espaces vides -->
+  <section class="section section--hero">
     <div class="container container--narrow">
       <p class="eyebrow" style="text-align: center;">Services</p>
-      <h1 style="text-align: center;">Retouches &amp; réparations</h1>
+      <h1 style="text-align: center;">Retouches &amp; Réparations</h1>
       <p class="lede" style="text-align: center;">
         Ourlets, reprises, ajustements, transformations : redonnez vie à vos vêtements
-        préférés plutôt que de les remplacer. Travail soigné, tarifs justes, délais rapides.
+        préférés plutôt que de les remplacer.<br />
+        Travail soigné, tarifs justes.
       </p>
     </div>
-  </section>
 
-  <!-- GALERIE AVANT/APRÈS -->
-  <section class="section">
-    <div class="container">
+    <div class="container" style="margin-top: var(--space-lg);">
       <header class="galerie-head">
         <p class="eyebrow">Quelques exemples</p>
-        <h2>Avant / après</h2>
-        <p class="galerie-lede">Un aperçu du travail réalisé à l'atelier, de la simple réparation à la restauration délicate.</p>
+        <h2>Avant / Après</h2>
       </header>
       <div class="galerie-grid">
         {galerie.map((g) => (
@@ -101,18 +115,12 @@ const etapes = [
             <h3>{g.titre}</h3>
             {g.seul ? (
               <div class="galerie-image galerie-image--single">
-                <img src={g.image} alt={g.titre} loading="lazy" />
+                <img src={g.image} alt={g.titre} loading="lazy" data-zoom />
               </div>
             ) : (
               <div class="galerie-image galerie-image--paire">
-                <figure>
-                  <img src={g.avant} alt={`${g.titre}, avant`} loading="lazy" />
-                  <figcaption>Avant</figcaption>
-                </figure>
-                <figure>
-                  <img src={g.apres} alt={`${g.titre}, après`} loading="lazy" />
-                  <figcaption>Après</figcaption>
-                </figure>
+                <img src={g.avant} alt={`${g.titre}, avant`} loading="lazy" data-zoom />
+                <img src={g.apres} alt={`${g.titre}, après`} loading="lazy" data-zoom />
               </div>
             )}
             <p class="galerie-desc">{g.description}</p>
@@ -162,8 +170,8 @@ const etapes = [
       ))}
 
       <p class="tarifs-footer">
-        Un doute sur une réparation ? Passez à l'atelier ou envoyez-moi une photo par message
-        je vous dis tout de suite si c'est faisable et à quel prix.
+        Un doute sur une réparation ? Prenez rendez-vous pour passer à l'atelier, je vous dis
+        de suite si c'est réalisable et à quel prix.
       </p>
     </div>
   </section>
@@ -175,6 +183,46 @@ const etapes = [
       <a href="/contact" class="btn">Me contacter</a>
     </div>
   </section>
+
+  <!-- Lightbox pour agrandir les photos -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
+    <button class="lightbox__close" aria-label="Fermer">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script is:inline>
+    (function () {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const closeBtn = lightbox.querySelector('.lightbox__close');
+
+      function openLightbox(src, alt) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || '';
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImg.src = '';
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('img[data-zoom]').forEach((img) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => openLightbox(img.src, img.alt));
+      });
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target === closeBtn) closeLightbox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
 </BaseLayout>
 
 <style>
@@ -193,14 +241,14 @@ const etapes = [
     letter-spacing: 0.15em;
     margin-bottom: var(--space-xs);
   }
+  .section--hero { padding-bottom: var(--space-xl); }
   .section--soft { background: var(--color-primary-soft); }
 
   /* GALERIE AVANT/APRÈS */
-  .galerie-head { text-align: center; margin-bottom: var(--space-lg); }
-  .galerie-lede { color: var(--color-text-muted); max-width: 520px; margin: var(--space-sm) auto 0; }
+  .galerie-head { text-align: center; margin-bottom: var(--space-md); }
   .galerie-grid {
     display: grid;
-    gap: var(--space-lg);
+    gap: var(--space-md);
     grid-template-columns: 1fr;
   }
   @media (min-width: 900px) {
@@ -217,39 +265,30 @@ const etapes = [
   .galerie-item h3 {
     font-size: 1.05rem;
     margin-bottom: var(--space-sm);
+    min-height: 2.6em;
   }
   .galerie-image {
     margin-bottom: var(--space-sm);
-  }
-  .galerie-image--single img {
-    width: 100%;
+    aspect-ratio: 4 / 3;
+    display: grid;
+    gap: 4px;
     border-radius: var(--radius);
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+    overflow: hidden;
+  }
+  .galerie-image--single {
+    grid-template-columns: 1fr;
   }
   .galerie-image--paire {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
   }
-  .galerie-image--paire figure {
-    margin: 0;
-    text-align: center;
-  }
-  .galerie-image--paire img {
+  .galerie-image img {
     width: 100%;
-    border-radius: var(--radius);
-    aspect-ratio: 1 / 1;
+    height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
   }
-  .galerie-image--paire figcaption {
-    font-family: var(--font-display);
-    font-size: 0.8rem;
-    color: var(--color-primary);
-    font-weight: 700;
-    margin-top: 0.35rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .galerie-image img:hover {
+    transform: scale(1.03);
   }
   .galerie-desc {
     font-size: 0.9rem;
@@ -258,6 +297,46 @@ const etapes = [
     line-height: 1.5;
   }
 
+  /* LIGHTBOX */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(43, 31, 53, 0.92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: var(--space-md);
+    cursor: zoom-out;
+  }
+  .lightbox.is-open { display: flex; }
+  .lightbox img {
+    max-width: 95vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    cursor: default;
+  }
+  .lightbox__close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+  }
+  .lightbox__close:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  /* ETAPES */
   .etapes {
     list-style: none;
     padding: 0;
@@ -291,6 +370,7 @@ const etapes = [
   .etape h3 { margin-bottom: 0.25rem; font-size: 1.1rem; }
   .etape p { margin: 0; color: var(--color-text-muted); }
 
+  /* TARIFS */
   .cat { margin-bottom: var(--space-lg); }
   .cat__titre {
     font-size: 1.15rem;
@@ -305,7 +385,6 @@ const etapes = [
     font-style: italic;
     margin-bottom: var(--space-sm);
   }
-
   .tarifs {
     background: var(--color-surface);
     border-radius: var(--radius-lg);
@@ -328,12 +407,11 @@ const etapes = [
     color: var(--color-accent-hover);
     white-space: nowrap;
   }
-
   .tarifs-footer {
     text-align: center;
     margin-top: var(--space-lg);
     color: var(--color-text-muted);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     padding: var(--space-md);
     background: var(--color-primary-soft);
     border-radius: var(--radius-lg);
