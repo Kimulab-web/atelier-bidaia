@@ -73,7 +73,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Que ce soit pour un atelier, une retouche ou un projet sur mesure,
         je serai ravie d'échanger avec vous.
       </p>
-      <a href="/contact" class="btn">Me contacter</a>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn">Me contacter</a>
+        <a href="https://calendar.app.google/dcZFh7jQfbBETxdN7er" target="_blank" rel="noopener" class="btn btn--ghost">Prendre rendez-vous</a>
+      </div>
     </div>
   </section>
 </BaseLayout>
@@ -157,4 +160,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
   .cta-final h2 { color: var(--color-primary); }
   .cta-final .lede { color: var(--color-text-muted); }
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 </style>

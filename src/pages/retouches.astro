@@ -68,7 +68,8 @@ const etapes = [
   {
     num: "1",
     titre: "Vous passez à l'atelier sur rendez-vous",
-    texte: "Vous pouvez m'appeler au 06 11 39 36 27.",
+    texte: 'Vous pouvez m\'appeler au <a href="tel:+33611393627">06 11 39 36 27</a> ou <a href="https://calendar.app.google/dcZFh7jQfbBETxdN7er" target="_blank" rel="noopener">prendre rendez-vous en ligne</a>.',
+    html: true,
   },
   {
     num: "2",
@@ -96,7 +97,7 @@ const etapes = [
   <section class="section section--hero">
     <div class="container container--narrow">
       <p class="eyebrow" style="text-align: center;">Services</p>
-      <h1 style="text-align: center;">Retouches &amp; Réparations</h1>
+      <h1 style="text-align: center; white-space: nowrap;">Retouches &amp; Réparations</h1>
       <p class="lede" style="text-align: center;">
         Ourlets, reprises, ajustements, transformations : redonnez vie à vos vêtements
         préférés plutôt que de les remplacer.<br />
@@ -139,7 +140,7 @@ const etapes = [
             <span class="etape__num">{e.num}</span>
             <div>
               <h3>{e.titre}</h3>
-              <p>{e.texte}</p>
+              {e.html ? <p set:html={e.texte} /> : <p>{e.texte}</p>}
             </div>
           </li>
         ))}
@@ -180,7 +181,10 @@ const etapes = [
     <div class="container container--narrow" style="text-align: center;">
       <h2>Un vêtement à retoucher ?</h2>
       <p class="lede">Passez à l'atelier ou écrivez-moi pour un devis.</p>
-      <a href="/contact" class="btn">Me contacter</a>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn">Me contacter</a>
+        <a href="https://calendar.app.google/dcZFh7jQfbBETxdN7er" target="_blank" rel="noopener" class="btn btn--ghost">Prendre rendez-vous</a>
+      </div>
     </div>
   </section>
 
@@ -425,4 +429,10 @@ const etapes = [
   }
   .cta-final h2 { color: var(--color-primary); }
   .cta-final .lede { color: var(--color-text-muted); }
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 </style>

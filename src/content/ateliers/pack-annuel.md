@@ -16,6 +16,7 @@ stripeLink: https://buy.stripe.com/REMPLACER_PAR_LE_LIEN
 Ce pack est fait pour vous si vous souhaitez vous engager sur la durée. 32 séances tout au long de l'année pour vous permettre, quel que soit votre niveau, de progresser.
 
 **840 €** pour 32 séances, soit environ **26 €** par séance, le meilleur rapport qualité-prix de mes formules.
+Une inscription en cours d'année est possible et le tarif est ajusté en conséquence.
 Possibilité de paiement échelonné : parlons-en.
 
 ## Au programme

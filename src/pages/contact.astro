@@ -11,6 +11,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Écrivez-moi, réponse sous 48h.
       </p>
 
+      <div class="rdv-block">
+        <p class="rdv-block__lead">Prendre rendez-vous directement en ligne :</p>
+        <a href="https://calendar.app.google/dcZFh7jQfbBETxdN7er" target="_blank" rel="noopener" class="btn">
+          🗓️ Prendre rendez-vous
+        </a>
+        <p class="rdv-block__note">Choisissez un créneau qui vous convient sur mon agenda.</p>
+      </div>
+
       <form
         class="contact-form"
         action="https://formspree.io/f/REMPLACER_PAR_ID"
@@ -42,6 +50,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="contact-alt">
         <p><strong>Ou directement :</strong></p>
         <p>📧 <a href="mailto:atelier.bidaia.alaia@gmail.com">atelier.bidaia.alaia@gmail.com</a></p>
+        <p>📞 <a href="tel:+33611393627">06 11 39 36 27</a></p>
         <p>📍 Espace Entreprise Aldatu, 30 rue Léon Larregain, 64240 Hasparren</p>
       </div>
     </div>
@@ -93,5 +102,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-top: var(--space-lg);
     padding-top: var(--space-lg);
     border-top: 1px solid var(--color-border);
+  }
+  .rdv-block {
+    background: var(--color-primary-soft);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    border: 1px solid var(--color-border);
+  }
+  .rdv-block__lead {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+  }
+  .rdv-block__note {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-top: var(--space-sm);
+    margin-bottom: 0;
   }
 </style>

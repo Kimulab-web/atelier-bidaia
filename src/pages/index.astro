@@ -216,7 +216,10 @@ const faq = [
       <p class="hero__lede">
         Contactez l'atelier, je vous réponds sous 48h et on trouve la solution qui vous convient.
       </p>
-      <a href="/contact" class="btn">Prendre contact</a>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn">Prendre contact</a>
+        <a href="https://calendar.app.google/dcZFh7jQfbBETxdN7er" target="_blank" rel="noopener" class="btn btn--ghost">Prendre rendez-vous</a>
+      </div>
     </div>
   </section>
 </BaseLayout>
@@ -297,4 +300,10 @@ const faq = [
   }
   .cta-final h2 { color: var(--color-primary); }
   .cta-final .hero__lede { color: var(--color-text-muted); }
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 </style>
