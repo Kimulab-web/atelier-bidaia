@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://atelier-bidaia.fr',
+  site: 'https://atelier-bidaia-alaia.fr',
   integrations: [sitemap()],
   build: {
     inlineStylesheets: 'auto',

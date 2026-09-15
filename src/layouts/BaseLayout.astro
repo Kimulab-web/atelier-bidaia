@@ -50,6 +50,68 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Quicksand:wght@500;600;700&display=swap"
     />
+
+    <!-- Vercel Web Analytics (RGPD-friendly, sans cookie) -->
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    <!-- JSON-LD LocalBusiness pour le SEO local (Google Maps, résultats enrichis) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Atelier Bidaia Alaia",
+      "image": "https://atelier-bidaia-alaia.fr/logo.png",
+      "url": "https://atelier-bidaia-alaia.fr",
+      "telephone": "+33611393627",
+      "email": "atelier.bidaia.alaia@gmail.com",
+      "description": "Atelier de couture au Pays Basque à Hasparren. Cours et ateliers de couture, retouches et réparations par une couturière diplômée. Sandra vous accueille en petits groupes de 3 personnes maximum.",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Espace Entreprise Aldatu, 30 rue Léon Larregain",
+        "addressLocality": "Hasparren",
+        "postalCode": "64240",
+        "addressRegion": "Pyrénées-Atlantiques",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.3833,
+        "longitude": -1.3167
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Wednesday"],
+          "opens": "14:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Thursday"],
+          "opens": "18:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Friday"],
+          "opens": "10:00",
+          "closes": "12:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/atelier_bidaia_alaia/",
+        "https://www.facebook.com/61581204802760/"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Sandra",
+        "jobTitle": "Couturière diplômée"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Pays Basque"
+      }
+    })}></script>
   </head>
   <body>
     <Header />
