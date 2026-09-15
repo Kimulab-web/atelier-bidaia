@@ -2,36 +2,159 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Couturière diplômée au Pays Basque" description="Sandra, couturière diplômée à l'origine d'Atelier Bidaia Alaia à Hasparren. Découvrez son parcours et son atelier de couture au Pays Basque.">
+<BaseLayout
+  title="Couturière diplômée au Pays Basque"
+  description="Sandra, couturière diplômée à l'origine d'Atelier Bidaia Alaia à Hasparren. Découvrez son parcours et son atelier de couture au Pays Basque."
+>
   <section class="section">
+    <div class="container">
+      <p class="eyebrow" style="text-align: center;">À propos</p>
+      <h1 style="text-align: center;">Je suis Sandra,<br />votre couturière</h1>
+
+      <div class="apropos-content">
+        <figure class="apropos-photo">
+          <img src="/images/sandra-portrait.jpg" alt="Sandra, couturière diplômée à l'atelier Bidaia Alaia à Hasparren" loading="lazy" />
+        </figure>
+
+        <div class="apropos-text">
+          <p>
+            Après 25 ans dans le secteur sanitaire et médico-social, où j'ai
+            notamment animé des ateliers thérapeutiques, j'ai choisi de me
+            reconvertir vers ce qui m'a toujours accompagnée : la couture.
+          </p>
+          <p>
+            J'ai obtenu mon <strong>CAP Métiers de la Mode – Vêtements Flous en 2025</strong>
+            et depuis j'anime des ateliers de couture loisir dans plusieurs lieux du
+            Pays Basque, ouverts aux débutants comme à celles et ceux qui souhaitent
+            progresser.
+          </p>
+          <p>
+            J'ai installé mon atelier à Hasparren avec une idée simple :
+            <strong>proposer des services de proximité</strong> à la population d'un
+            territoire éloigné des centres urbains de la côte. Ces services de
+            proximité sont :
+          </p>
+          <ul class="apropos-liste">
+            <li>
+              <strong>Des ateliers de couture loisir, tous niveaux</strong>, que
+              j'envisage comme des espaces d'apprentissage mais aussi de création
+              de lien social.
+            </li>
+            <li>
+              <strong>Des prestations de retouche-vêtement</strong>, parce que je
+              crois qu'un vêtement bien fait mérite d'être réparé plutôt que jeté.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
     <div class="container container--narrow">
-      <h1>À propos</h1>
-
-      <p class="lede">
-        [À rédiger] Présentez ici l'atelier, votre parcours, votre approche
-        de la couture, ce qui vous anime.
-      </p>
-
-      <h2>L'histoire</h2>
-      <p>[À rédiger] Comment est né Atelier Bidaia Alaia ? Le pourquoi du nom (« bidaia » = voyage en basque, « alaia » = joyeuse/gaie).</p>
-
-      <h2>La démarche</h2>
-      <p>[À rédiger] Matières choisies, approche pédagogique pour les cours, engagements (récup, made in Pays Basque, etc.).</p>
-
       <h2>Où me trouver</h2>
-      <p>[À rédiger] Adresse exacte de l'atelier, horaires d'ouverture, accès.</p>
+      <p>
+        L'atelier se situe à l'<strong>Espace Entreprise Aldatu, 30 rue Léon
+        Larregain, 64240 Hasparren</strong>, au cœur du Pays Basque intérieur.
+        Parking facile à proximité.
+      </p>
+      <p>
+        Pour prendre rendez-vous ou en savoir plus, vous pouvez
+        <a href="/contact">me contacter</a> ou m'appeler directement au
+        <a href="tel:+33611393627">06 11 39 36 27</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section cta-final">
+    <div class="container container--narrow" style="text-align: center;">
+      <h2>Envie de discuter d'un projet ?</h2>
+      <p class="lede">
+        Que ce soit pour un atelier, une retouche ou un projet sur mesure,
+        je serai ravie d'échanger avec vous.
+      </p>
+      <a href="/contact" class="btn">Me contacter</a>
     </div>
   </section>
 </BaseLayout>
 
 <style>
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--color-secondary-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-xs);
+  }
+
+  h1 { margin-bottom: var(--space-lg); }
+
+  .apropos-content {
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: 1fr;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: start;
+  }
+  @media (min-width: 800px) {
+    .apropos-content {
+      grid-template-columns: 380px 1fr;
+      gap: var(--space-xl);
+    }
+  }
+
+  .apropos-photo {
+    margin: 0;
+  }
+  .apropos-photo img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+
+  .apropos-text p {
+    line-height: 1.7;
+    margin-bottom: var(--space-sm);
+  }
+  .apropos-liste {
+    margin: var(--space-sm) 0 0 var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  .apropos-liste li {
+    line-height: 1.6;
+  }
+
+  .section--soft {
+    background: var(--color-primary-soft);
+  }
+  .section--soft h2 {
+    text-align: center;
+    margin-bottom: var(--space-md);
+  }
+  .section--soft p {
+    line-height: 1.7;
+    text-align: center;
+  }
+
   .lede {
     font-size: 1.15rem;
     color: var(--color-text-muted);
-    margin-bottom: var(--space-lg);
+    margin: var(--space-md) auto var(--space-lg);
+    max-width: 620px;
   }
-  h2 {
-    margin-top: var(--space-lg);
-    margin-bottom: var(--space-sm);
+  .cta-final {
+    background: #FDF3E1;
+    border-top: 3px solid var(--color-accent);
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
   }
+  .cta-final h2 { color: var(--color-primary); }
+  .cta-final .lede { color: var(--color-text-muted); }
 </style>
