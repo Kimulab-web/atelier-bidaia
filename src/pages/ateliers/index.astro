@@ -152,16 +152,17 @@ const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
     margin: var(--space-sm) auto 0;
   }
 
-  /* Grille : 2 cartes par ligne sur desktop et tablette, 1 sur mobile */
+  /* Grille : 3 cartes par ligne sur desktop, 2 sur tablette, 1 sur mobile */
   .ateliers-grid {
     display: grid;
     gap: var(--space-md);
     grid-template-columns: 1fr;
-    max-width: 900px;
-    margin: 0 auto;
   }
   @media (min-width: 640px) {
     .ateliers-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1000px) {
+    .ateliers-grid { grid-template-columns: repeat(3, 1fr); }
   }
 
   /* Réalisations */
