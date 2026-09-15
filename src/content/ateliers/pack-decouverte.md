@@ -8,7 +8,7 @@ places: 3
 horaire: Le jeudi de 18 h à 20 h
 ordre: 20
 publie: true
-stripeLink: https://buy.stripe.com/REMPLACER_PAR_LE_LIEN
+stripeLink: https://buy.stripe.com/9B68wR4EnbMvfx405jes001
 ---
 
 ## Pour qui ?

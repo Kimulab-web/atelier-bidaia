@@ -6,7 +6,7 @@ interface Props {
 }
 
 const { atelier } = Astro.props;
-const { titre, description, duree, niveau, prix, surDevis, places, horaire, stripeLink } = atelier.data;
+const { titre, description, duree, niveau, prix, surDevis, note, places, horaire, stripeLink } = atelier.data;
 
 // Lien de réservation valide seulement si Stripe est renseigné (pas le placeholder)
 const stripeValide = stripeLink && !stripeLink.includes('REMPLACER');
@@ -21,6 +21,7 @@ const stripeValide = stripeLink && !stripeLink.includes('REMPLACER');
     {horaire && <p class="card__horaire">🗓️ {horaire}</p>}
     <p>{description}</p>
     <p class="card__price">{surDevis ? 'Sur devis' : `${prix} €`}</p>
+    {note && <p class="card__note">{note}</p>}
     <p class="card__places">{places === 1 ? '1 personne (individuel)' : `${places} places max`}</p>
     {surDevis ? (
       <a href="/contact" class="btn" style="margin-top: var(--space-sm);">
@@ -52,6 +53,13 @@ const stripeValide = stripeLink && !stripeLink.includes('REMPLACER');
     color: var(--color-primary);
     font-weight: 600;
     margin-bottom: var(--space-sm);
+  }
+  .card__note {
+    font-size: 0.8rem;
+    color: var(--color-accent-hover);
+    font-weight: 600;
+    font-style: italic;
+    margin: 0.15rem 0 0;
   }
   .card__places {
     font-size: 0.8rem;

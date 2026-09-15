@@ -11,6 +11,7 @@ const ateliers = defineCollection({
       niveau: z.enum(['débutant', 'intermédiaire', 'confirmé', 'tous niveaux']),
       prix: z.number(), // en euros (0 = sur devis)
       surDevis: z.boolean().default(false),
+      note: z.string().optional(), // petite mention affichée sous le prix
       places: z.number(), // nombre max de participants
       dates: z.array(z.date()).optional(),
       horaire: z.string().optional(),

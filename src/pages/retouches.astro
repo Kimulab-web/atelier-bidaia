@@ -62,6 +62,12 @@ const categories = [
       { prestation: "Réparation d'un accroc ou d'une déchirure", prix: "20 €" },
     ],
   },
+  {
+    titre: "Couture ameublement",
+    tarifs: [
+      { prestation: "Rideaux, coussins, housses, transformations…", prix: "Sur devis" },
+    ],
+  },
 ];
 
 const etapes = [
@@ -124,7 +130,6 @@ const etapes = [
                 <img src={g.apres} alt={`${g.titre}, après`} loading="lazy" data-zoom />
               </div>
             )}
-            <p class="galerie-desc">{g.description}</p>
           </article>
         ))}
       </div>

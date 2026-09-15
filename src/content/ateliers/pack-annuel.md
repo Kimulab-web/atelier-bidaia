@@ -6,6 +6,7 @@ niveau: tous niveaux
 prix: 840
 places: 3
 horaire: Le jeudi de 18 h à 20 h
+note: Inscription en cours d'année possible
 ordre: 40
 publie: true
 stripeLink: https://buy.stripe.com/REMPLACER_PAR_LE_LIEN

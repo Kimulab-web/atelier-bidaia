@@ -8,7 +8,7 @@ places: 3
 horaire: Le mercredi de 18 h à 20 h
 ordre: 10
 publie: true
-stripeLink: https://buy.stripe.com/REMPLACER_PAR_LE_LIEN
+stripeLink: https://buy.stripe.com/9B64gB5IraIr5WuaJXes000
 ---
 
 ## Pour qui ?
