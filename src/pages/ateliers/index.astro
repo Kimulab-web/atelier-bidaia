@@ -49,9 +49,10 @@ const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
       </header>
       <div class="realisations-grid">
         <figure><img src="/images/cotons-panier.jpg" alt="Lot de lingettes démaquillantes lavables dans leur panier" loading="lazy" /></figure>
-        <figure><img src="/images/realisation-lingettes-detail.jpg" alt="Détail des lingettes cousues et vue du panier de rangement" loading="lazy" /></figure>
         <figure><img src="/images/cotons.jpg" alt="Lingettes lavables cousues main, motif fleuri" loading="lazy" /></figure>
+        <figure><img src="/images/realisation-tote-leopard.jpg" alt="Tote bag léopard en coton, pièce unique cousue à l'atelier" loading="lazy" /></figure>
         <figure><img src="/images/creations-tote.jpg" alt="Tote bag léopard et créations diverses réalisées à l'atelier" loading="lazy" /></figure>
+        <figure><img src="/images/realisation-marque-page.jpg" alt="Marque-page en tissu motif cœurs cousu main" loading="lazy" /></figure>
       </div>
     </div>
   </section>
@@ -201,8 +202,11 @@ const ateliers = (await getCollection('ateliers', ({ data }) => data.publie))
     gap: var(--space-sm);
     grid-template-columns: repeat(2, 1fr);
   }
-  @media (min-width: 900px) {
-    .realisations-grid { grid-template-columns: repeat(4, 1fr); }
+  @media (min-width: 700px) {
+    .realisations-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (min-width: 1100px) {
+    .realisations-grid { grid-template-columns: repeat(5, 1fr); }
   }
   .realisations-grid figure {
     margin: 0;
